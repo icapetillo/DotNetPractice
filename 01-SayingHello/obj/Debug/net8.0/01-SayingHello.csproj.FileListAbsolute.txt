@@ -1,0 +1,15 @@
+D:\Repos\DotNetPractice\01-SayingHello\bin\Debug\net8.0\01-SayingHello.exe
+D:\Repos\DotNetPractice\01-SayingHello\bin\Debug\net8.0\01-SayingHello.deps.json
+D:\Repos\DotNetPractice\01-SayingHello\bin\Debug\net8.0\01-SayingHello.runtimeconfig.json
+D:\Repos\DotNetPractice\01-SayingHello\bin\Debug\net8.0\01-SayingHello.dll
+D:\Repos\DotNetPractice\01-SayingHello\bin\Debug\net8.0\01-SayingHello.pdb
+D:\Repos\DotNetPractice\01-SayingHello\obj\Debug\net8.0\01-SayingHello.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\DotNetPractice\01-SayingHello\obj\Debug\net8.0\01-SayingHello.AssemblyInfoInputs.cache
+D:\Repos\DotNetPractice\01-SayingHello\obj\Debug\net8.0\01-SayingHello.AssemblyInfo.cs
+D:\Repos\DotNetPractice\01-SayingHello\obj\Debug\net8.0\01-SayingHello.csproj.CoreCompileInputs.cache
+D:\Repos\DotNetPractice\01-SayingHello\obj\Debug\net8.0\01-SayingHello.sourcelink.json
+D:\Repos\DotNetPractice\01-SayingHello\obj\Debug\net8.0\01-SayingHello.dll
+D:\Repos\DotNetPractice\01-SayingHello\obj\Debug\net8.0\refint\01-SayingHello.dll
+D:\Repos\DotNetPractice\01-SayingHello\obj\Debug\net8.0\01-SayingHello.pdb
+D:\Repos\DotNetPractice\01-SayingHello\obj\Debug\net8.0\01-SayingHello.genruntimeconfig.cache
+D:\Repos\DotNetPractice\01-SayingHello\obj\Debug\net8.0\ref\01-SayingHello.dll

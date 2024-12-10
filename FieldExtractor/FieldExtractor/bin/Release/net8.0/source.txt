@@ -1,0 +1,1470 @@
+<TemplateDescriptor Name="[DATA - LOGISTICS]" Id="d4671c5d-9fdd-4847-8c6e-2668e895d6a0" TemplateFilename="documents\TradeTech Offices\Data Masters\DATA-LOGISTICS.pdf" Default="true" Submission="false" ContentType="application/pdf" SchemaVersion="1.0" Active="true">
+  <cmattributes documentName="DATA - LOGISTICS" repositoryPath="documents\TradeTech Offices\Data Masters" FileType="TemplateDescriptor" />
+  <RevisionInfo Header="" DateTime="" Author="Doris" />
+  <Description>Data Logistics Master </Description>
+  <Keywords>
+    <Keyword Key="office">TradeTech</Keyword>
+    <Keyword Key="outsource">true</Keyword>
+  </Keywords>
+  <DeclarationItems />
+  <Emblem />
+  <Script Language="python" Template=""><![CDATA[# Name:               
+# Py Class:           DATA__LOGISTICS
+# Py Package: 		  
+# Script Guid:        00000000-0000-0000-0000-000000000000
+# Template File Name: 
+# PDF File Name:      
+# Tree:               
+# Scope:              
+# Language:           
+# Version:            1/1/0001 12:00:00 AM
+# Last Update:        1/1/0001 12:00:00 AM
+
+from Doc.PYScriptBase import *
+from Doc.Lib.InvoiceTotals import *
+from Doc.String import IsNullOrEmpty
+from Doc.Lib.MiscFormatters import *
+from Doc.Lib.DateFormats import *
+from Doc.Lib.TTBillingSupport_R1 import *
+from Doc.Lib.TTLogisticsWorkflow import *
+from Doc.Lib.TTMasterData import *
+from Doc.Lib.BankDraftTT import *
+
+
+class DATA__LOGISTICS(PYScriptBase):
+ def __init__(self):
+  PYScriptBase.__init__(self)
+
+ def WordWrapText(self, instring):
+  outstring = ""
+
+  tmp = instring.split("\n")
+  for i in range(0,len(tmp)) :
+      if tmp[i] != "" :
+          outstring += tmp[i] + " "
+
+  return outstring
+
+
+ def Execute(self,DocContext,Reader):
+  nothing = ""
+  vbcrlf = "\r\n"
+  cb4 =  ""
+  temp =  ""
+
+  MAXLINESCOUNT = 22
+  MAXTODOCOUNT = 23
+  MAXTODODATECOUNT = 22
+
+
+
+  EXCLUDECURRENCYSYMBOL = 1 
+  DEFAULTIFNULLOREMPTY  = 1 
+
+  d1 = DateFormats()
+  mf = MiscFormatters()
+  ttbilling =  TTBillingSupport_R1()
+  ttlogistics =  TTLogisticsWorkflow()
+  ttmasterdata = TTMasterData()
+
+
+  currencycode = Reader.Get ("32bc", nothing)
+  negot = Reader.Get("NegotBank", nothing)
+  beneficiary = Reader.Get("59", nothing)
+  applicant = Reader.Get("50", nothing)
+
+
+  sn = "dllocal"
+
+  Reader.Process("expshipdate","expshipdate",nothing)
+  Reader.Process("cargoreceiveddate","dl.cargoreceiveddate",nothing)
+  Reader.Process("dprreceived", "dllocal.dprreceived", nothing)  
+  Reader.Process("earliestshipdate", "dllocal.earliestshipdate", nothing)
+  Reader.Process("workabilitydatesent", "dllocal.workabilitydatesent", nothing)
+  Reader.Process("dateforward", "dateforward", nothing)
+  Reader.Process("sidate","sidate",nothing)
+  Reader.Process("proofcopyrecvd","dl.proofcopyrecvd",nothing)
+  Reader.Process("releasedtransportdocdate","dllocal.releasedtransportdocdate",nothing)
+  Reader.Process("transportdocdate","transportdocdate",nothing)
+  Reader.Process("thirdpartydocreceiveddate","dllocal.thirdpartydocreceiveddate",nothing)
+  Reader.Process("onboarddate","onboarddate",nothing)
+  Reader.Process("onboarddate-docs","dl.onboarddate-docs",nothing)
+  Reader.Process("blmonth","dl.blmonth",nothing)
+  Reader.Process("blday","dl.blday",nothing)
+  Reader.Process("blyear","dl.blyear",nothing)
+  Reader.Process("issuedby","dl.issuedby,51a",nothing)
+  Reader.Process("invoicenumber","invoicenumber",nothing)
+  Reader.Process("draftno","cover.draftno",nothing)
+  Reader.Process("invoicedate","invoicedate",nothing)
+  Reader.Process("invoicedates", "invoicedates", nothing)
+  Reader.Process("invoiceamount","invoiceamount",nothing)
+  Reader.Process("currencycode","32bc",nothing)
+  Reader.Process("firstadvicedate","dllocal.firstadvicedate",nothing)
+  Reader.Process("secondadvicedate","dllocal.secondadvicedate",nothing)
+  Reader.Process("estlatestpresentation","dllocal.estlatestpresentation",nothing)
+  Reader.Process("ntedays","dllocal.ntedays",nothing)
+  Reader.Process("rbntedate","dllocal.rbntedate",nothing)
+  Reader.Process("FACmilestone","dllocal.FACmilestone",nothing)
+  Reader.Process("facnoofdays","dllocal.facnoofdays",nothing)
+  Reader.Process("cbFACnoofdays","dllocal.cbFACnoofdays",nothing)
+  Reader.Process("expecteddrawdate","dllocal.expecteddrawdate",nothing)
+  Reader.Process("cbextraday","dllocal.cbextraday",nothing)
+  Reader.Process("FACpercentofinvoice","dllocal.FACpercentofinvoice",nothing)
+  Reader.Process("inlandrouting","dllocal.inlandrouting",nothing)
+
+
+  Reader.Process("pinvoicedate","dl.pinvoicedate",nothing)
+  Reader.Process("pinvoicenumber","dl.pinvoicenumber",nothing)
+  Reader.Process("pinvoiceamount","dl.pinvoiceamount",nothing)
+  Reader.Process("draftpayee","dl.draftpayee",nothing)
+  Reader.Process("draftamount","draft.amount",nothing)
+  Reader.Process("draftamount1","draft-first.amount",nothing)
+  Reader.Process("draftamount2","draft-second.amount",nothing)
+  Reader.Process("draftamount3","draft-third.amount",nothing)
+  Reader.Process("draftpercent1", "dl.draftpercent1",nothing)
+  Reader.Process("draftpercent2", "dl.draftpercent2",nothing)
+  Reader.Process("draftpercent3", "dl.draftpercent3",nothing)
+  Reader.Process("lflowinvoicedate","dl.lflowinvoicedate",nothing)
+  Reader.Process("loverridedraftcalculation","dl.loverridedraftcalculation",nothing)
+  Reader.Process("draftdate","dl.draftdate",nothing)
+  Reader.Process("draftplaceofissue","dl.draftplaceofissue",nothing)
+  Reader.Process("incoterms","dl.incoterms,ShipTerms",nothing)
+  Reader.Process("paymentterms1","draft-first.tenor,42c",nothing)
+  Reader.Process("paymentterms2","draft-second.tenor",nothing)
+  Reader.Process("paymentterms3","draft-third.tenor",nothing)
+  Reader.Process("rbdraft1","dl.rbdraft1",nothing)
+  Reader.Process("rbdraft2","dl.rbdraft2",nothing)
+  Reader.Process("rbdraft3","dl.rbdraft3",nothing)
+  Reader.Process("draftclause","dl.draftclause",nothing)
+
+# PLATSUP-236: Add new field  - Fields hidden for new UCI webform process
+# Reader.Process("rbTradebridgeUCIAlternate","dllocal.rbTradebridgeUCIAlternate",nothing)
+# Reader.Process("TradebridgeUciAlternate","dllocal.uci",nothing)
+# Reader.Process("TradebridgeUciAlternatepartnerChannel","dllocal.uci.partnerChannel",nothing)
+
+  Reader.Process("combotenorType","dl.combotenorType",nothing)
+  Reader.Process("tenorType","dl.tenorType",nothing)
+  Reader.Process("loverridedraftclause","dl.loverridedraftclause",nothing)
+  Reader.Process("overridedraftclause","dl.overridedraftclause",nothing)
+  Reader.Process("cbcleardraftclause","dllocal.cbcleardraftclause",nothing)
+  Reader.Process("cbaddlcdoc","dl.cbaddlcdoc",nothing)
+  Reader.Process("paymentinstructions","dl.paymentinstructions",nothing)
+  Reader.Process("paymentBankName","cover.paymentBankName",nothing)
+  Reader.Process("paymentBankBIC","cover.paymentBankBIC",nothing)
+  Reader.Process("paymentBankAccountNo","cover.paymentBankAccountNo",nothing)
+  Reader.Process("rbbank","dl.rbbank",nothing)
+  Reader.Process("negotiatingbank","NegotBank,cover.negotiatingbank",nothing)
+  Reader.Process("currencypaytrade","dl.currencypaytrade",nothing)
+  Reader.Process("cbpaytrade","dl.cbpaytrade",nothing)
+  Reader.Process("tradebank","dl.tradebank",nothing)
+  Reader.Process("paytradeamount","dl.paytradeamount",nothing)
+  Reader.Process("comboboxpaytobank","dl.comboboxpaytobank",nothing)
+
+  Reader.Process("buyerreference","buyerreference",nothing)
+  Reader.Process("contractno","contractno",nothing)
+  Reader.Process("refno","dllocal.refno",nothing)
+  Reader.Process("refno2","dllocal.refno2",nothing)
+  Reader.Process("refno3","dllocal.refno3",nothing)
+  Reader.Process("refno4","InternalReference",nothing)
+
+  Reader.Process("rbpresenterreference", "dl.rbpresenterreference",nothing)
+  Reader.Process("presenterReference", "cover.presenterReference", nothing)
+  Reader.Process("presenterName", "cover.presenterName", nothing)
+  Reader.Process("presenterAddressLine1", "cover.presenterAddressLine1", nothing)
+  Reader.Process("presenterAddressLine2", "cover.presenterAddressLine2", nothing)
+  Reader.Process("presenterAddressLine3", "cover.presenterAddressLine3", nothing)
+  Reader.Process("presenterCountry", "cover.presenterCountry", nothing)
+
+  Reader.Process("miscint1","dllocal.miscint1",nothing)
+  Reader.Process("finalacceptance","dl.finalacceptance",nothing)
+  Reader.Process("finalacceptance90","dl.finalacceptance90",nothing)
+  Reader.Process("finalacceptance120","dl.finalacceptance120",nothing)
+  Reader.Process("finalacceptanceother","dl.finalacceptanceother",nothing)
+  Reader.Process("finalacceptancedays","dl.finalacceptancedays",nothing)
+  Reader.Process("shortdescription","dl.shortdescription,45a",nothing)
+  Reader.Process("fulldescription","dl.fulldescription,45a",nothing)
+  Reader.Process("lcopydescription","dl.lcopydescription",nothing)
+  Reader.Process("cbpartialshipment","dl.cbpartialshipment",nothing)
+  Reader.Process("beneficiaryname","dl.beneficiaryname,OrderOf",nothing)
+  Reader.Process("transportdocshipper","dl.transportdocshipper,59",nothing)
+  Reader.Process("endorsement","dl.endorsement",nothing)
+  Reader.Process("endorsementinsurance","dl.endorsementinsurance",nothing)
+  Reader.Process("insurancepct","dl.insurancepct",nothing)
+  Reader.Process("flowendorsetransportdoc","dl.flowendorsetransportdoc",nothing)
+  Reader.Process("flowendorseinsurance","dl.flowendorseinsurance",nothing)
+  Reader.Process("flowinsurancedoctitle","dl.flowinsurancedoctitle",nothing)
+  Reader.Process("placeofissue","dl.placeofissue",nothing)
+  Reader.Process("forwardername","dl.forwardername",nothing)
+  Reader.Process("forwarder","Forwarder",nothing)
+  Reader.Process("forwarderref","forwarderref",nothing)
+  Reader.Process("consignee","dl.consignee",nothing)
+  Reader.Process("consigneeawb","dl.consigneeawb",nothing)
+  Reader.Process("rb2","dl.rb2",nothing)
+  Reader.Process("alternatesoldto","dl.alternatesoldto",nothing)
+  Reader.Process("notify","dl.notify",nothing)
+  Reader.Process("notifyawb","dl.notifyawb",nothing)
+  Reader.Process("freightprepaid","dl.freightprepaid",nothing)
+  Reader.Process("freightcollect","dl.freightcollect",nothing)
+  Reader.Process("checkboxfpp","dl.checkboxfpp",nothing)
+  Reader.Process("checkboxfcol","dl.checkboxfcol",nothing)
+  Reader.Process("rb1","dl.rb1",nothing)
+  Reader.Process("cbdate", "dl.cbdate", nothing)
+##  PLATSUP-1180 - cb1 is now a text field to save the 'mawbcarrier' value
+##                 cbaircarrier exports "Yes" or "Off"
+  Reader.Process("cb1","dl.cb1",nothing)
+  Reader.Process("cbaircarrier","dl.cbaircarrier",nothing)
+  Reader.Process("cbffshipper","dl.cbffshipper",nothing)
+
+
+  Reader.Process("iatacode","dl.iatacode",nothing)
+  Reader.Process("toord","dl.toord",nothing)
+  Reader.Process("bybom1","dl.bybom1",nothing)
+  Reader.Process("tobom1","dl.tobom1",nothing)
+  Reader.Process("tobom2","dl.tobom2",nothing)
+  Reader.Process("bybom2","dl.bybom2",nothing)
+  Reader.Process("currency","dl.currencycode",nothing)
+  Reader.Process("insuranceamount","dl.insuranceamount",nothing)
+  Reader.Process("rate","dl.rate",nothing)
+  Reader.Process("rate2", "dl.rate2",nothing)
+  Reader.Process("chargeableweight","dl.chargeableweight",nothing)
+  Reader.Process("chcode","dl.chcode",nothing)
+  Reader.Process("wtval","dl.wtval",nothing)
+  Reader.Process("declaredvaluecarriage","dl.declaredvaluecarriage",nothing)
+  Reader.Process("declaredvaluecustoms","dl.declaredvaluecustoms",nothing)
+  Reader.Process("hawb","masterbl.hawb",nothing)
+  Reader.Process("mawb","masterbl.mawb",nothing)
+  Reader.Process("flightno","dl.flightno",nothing)
+  Reader.Process("flightdate1","dl.flightdate1",nothing)
+  Reader.Process("flightnodate1","dl.flightnodate1",nothing)
+  Reader.Process("flightno2","dl.flightno2",nothing)
+  Reader.Process("flightdate2","dl.flightdate2",nothing)
+  Reader.Process("flightnodate2","dl.flightnodate2",nothing)
+  Reader.Process("flightno3","dl.flightno3",nothing)
+  Reader.Process("flightdate3","dl.flightdate3",nothing)
+  Reader.Process("flightnodate3","dl.flightnodate3",nothing)
+  Reader.Process("flightno4","dl.flightno4",nothing)
+  Reader.Process("flightdate4","dl.flightdate4",nothing)
+  Reader.Process("flightnodate4","dl.flightnodate4",nothing)
+
+  Reader.Process("carrier","dl.carrier",nothing)
+  Reader.Process("bookingnumber","bookingnumber",nothing)
+  Reader.Process("blnumber","blnumber",nothing)
+  Reader.Process("bltrackingnumber1","dl.bltrackingnumber1",nothing)
+  Reader.Process("bltrackingnumber2","dl.bltrackingnumber2",nothing)
+  Reader.Process("cbvessel","dl.cbvessel",nothing)
+  Reader.Process("vessel","vessel",nothing)
+  Reader.Process("voyage","dl.voyage",nothing)
+  Reader.Process("iMONumber","cover.iMONumber",nothing)
+  Reader.Process("combotransportmode","dl.combotransportmode",nothing)
+  Reader.Process("transportMode","cover.transportMode",nothing)
+  Reader.Process("oceancarrier","dl.oceancarrier",nothing)
+  Reader.Process("loaded","dl.loaded",nothing)
+  Reader.Process("loadedat","dl.loadedat",nothing)
+  Reader.Process("loadedon","dl.loadedon",nothing)
+  Reader.Process("onboardstatement","dl.onboardstatement",nothing)
+  Reader.Process("onboardstatementcustom","dl.onboardstatementcustom",nothing)
+  Reader.Process("cb2","dl.cb2",nothing)
+
+  Reader.Process("ein","dl.ein",nothing)
+  Reader.Process("lei","dl.lei",nothing)
+  Reader.Process("sed","dl.sed",nothing)
+  Reader.Process("cb3","dl.cb3",nothing)
+  Reader.Process("cb4","dl.cb4",nothing)
+  Reader.Process("lcombinedata","dl.lcombinedata",nothing)
+
+  Reader.Process("comboshipment","dl.comboshipment",nothing)
+  Reader.Process("lbeneficiaryvatid","dl.lbeneficiaryvatid",nothing)
+  Reader.Process("beneficiaryvatid","dl.beneficiaryvatid",nothing)
+  Reader.Process("shipmenttext", "dl.shipmenttext", nothing)
+
+  Reader.Process("placeofreceipt","dl.placeofreceipt,44a",nothing)
+  #Reader.Process("cbreceipt","dl.cbreceipt",nothing)
+  Reader.Process("loadingport","dl.loadingport,44e,44a",nothing)
+  Reader.Process("dischargeport","dl.dischargeport,44f,44b",nothing)
+  Reader.Process("bookingdischargeport","dllocal.bookingdischargeport",nothing)
+  Reader.Process("finaldestination","dl.finaldestination,44b",nothing)
+  #Reader.Process("cbfinald","dl.cbfinald",nothing)
+
+  Reader.Process("dimensions","dl.dimensions",nothing)
+  Reader.Process("packageweight","dl.packageweight",nothing)
+  Reader.Process("packagenetweight","dl.packagenetweight",nothing)
+  Reader.Process("quantity","dl.quantity",nothing)
+  Reader.Process("lcquantity","dl.lcquantity",nothing)
+  Reader.Process("packagecount","dl.packagecount",nothing)
+  Reader.Process("packageunits","dl.packageunits",nothing)
+  Reader.Process("packagecounttext","dl.packagecounttext",nothing)
+
+  Reader.Process("ponumber","dl.ponumber",nothing)
+  Reader.Process("podate","dl.podate",nothing)
+#    PLATSUP-1790 - renamed field eta to shipmenteta.  shipmenteta is a report field
+  Reader.Process("shipmenteta","dl.shipmenteta",nothing)
+
+  Reader.Process("arrivaldate","dl.arrivaldate",nothing)
+  Reader.Process("countryoforigin","dl.countryoforigin",nothing)
+  Reader.Process("marksnumbers","dl.marksnumbers",nothing)
+  Reader.Process("forwarderfee","ForwarderFee",nothing)
+  Reader.Process("dcarrier","DomestCarrier",nothing)
+  Reader.Process("dcarrierfee","DomestCarrierFee",nothing)
+  Reader.Process("icarrier","IntlCarrier",nothing)
+  Reader.Process("icarrierfee","IntlCarrierFee",nothing)
+  Reader.Process("ins","Insurer",nothing)
+  Reader.Process("insfee","InsuranceFee",nothing)
+  Reader.Process("inspect","Inspector",nothing)
+  Reader.Process("inspectfee","InspectionFee",nothing)
+  Reader.Process("remarks","remarks",nothing)
+  Reader.Process("rbdate","dl.rbdate",nothing)
+  Reader.Process("docpreparer","dl.docpreparer",nothing)
+  Reader.Process("combo1","dl.combo1",nothing)
+  Reader.Process("docprepareremail","dl.docprepareremail",nothing)
+  Reader.Process("combocontactemail","dl.combocontactemail",nothing)
+  Reader.Process("contactemail","dl.contactemail",nothing)
+  Reader.Process("contactoffice","dl.contactoffice",nothing)
+  Reader.Process("officelocation","dl.officelocation",nothing)
+  Reader.Process("officecityst","dl.officecityst",nothing)
+  Reader.Process("officeaddress","dl.officeaddress",nothing)
+  Reader.Process("officefax","dl.officefax",nothing)
+
+
+  Reader.Process("subPO-1","dllocal.subPO-1",nothing)
+
+
+
+#  Certificate of Origin and Chamber certificates
+  Reader.Process("coocountryoforigintext1","dl.coocountryoforigintext1",nothing)
+  Reader.Process("coocountryoforigintext2","dl.coocountryoforigintext2",nothing)
+  Reader.Process("coocountryoforigin","dl.coocountryoforigin",nothing)
+  Reader.Process("coocountryoforigintext","dl.coocountryoforigintext",nothing)
+  Reader.Process("cbcooinvoice","dl.cbcooinvoice",nothing)
+
+
+  Reader.Process("stamptext","dl.stamptext,OrderOf",nothing)
+  Reader.Process("cbstampinv","dllocal.cbstampinv",nothing)
+  Reader.Process("cbstamppl","dllocal.cbstamppl",nothing)
+  Reader.Process("cbstampchamberdoc","dllocal.cbstampchamberdoc",nothing)
+  Reader.Process("cbstampotherdocs","dllocal.cbstampotherdocs",nothing)
+  Reader.Process("cbstamptransportdocs","dllocal.cbstamptransportdocs",nothing)
+
+  Reader.Process("stampfwdrtext","dl.stampfwdrtext,dl.forwardername",nothing)
+  Reader.Process("cbstampawb","dllocal.cbstampawb",nothing)
+  Reader.Process("cbstampbl","dllocal.cbstampbl",nothing)
+  Reader.Process("cbstampfcr","dllocal.cbstampfcr",nothing)
+  Reader.Process("cbstampcarriercert","dllocal.cbstampcarriercert",nothing)
+
+  Reader.Process("logotext1","dl.logotext1",nothing)
+  Reader.Process("logotext2","dl.logotext2",nothing)
+  #  save to field so that is is copied only when copying data from another transaction/draw
+  Reader.Process("filestoragereference","dllocal.filestoragereference",nothing)
+
+#  Flow Matrix
+  Reader.Process("cbqtytoinvoice", "dl.cbqtytoinvoice", nothing)
+  Reader.Process("cbpctoinvoice", "dl.cbpctoinvoice", nothing)
+  Reader.Process("cbpgwtoinvoice", "dl.cbpgwtoinvoice", nothing)
+  Reader.Process("cbpnwtoinvoice", "dl.cbpnwtoinvoice", nothing)
+  Reader.Process("cbdimtoinvoice", "dl.cbdimtoinvoice", nothing)
+  Reader.Process("cbsmtoinvoice", "dl.cbsmtoinvoice", nothing)
+
+  Reader.Process("cbqtytopackinglist", "dl.cbqtytopackinglist", nothing)
+  Reader.Process("cbpctopackinglist", "dl.cbpctopackinglist", nothing)
+  Reader.Process("cbpgwtopackinglist", "dl.cbpgwtopackinglist", nothing)
+  Reader.Process("cbpnwtopackinglist", "dl.cbpnwtopackinglist", nothing)
+  Reader.Process("cbdimtopackinglist", "dl.cbdimtopackinglist", nothing)
+  Reader.Process("cbsmtopackinglist", "dl.cbsmtopackinglist", nothing)
+
+  Reader.Process("cbqtytocoo", "dl.cbqtytocoo", nothing)
+  Reader.Process("cbpctocoo", "dl.cbpctocoo", nothing)
+  Reader.Process("cbpgwtocoo", "dl.cbpgwtocoo", nothing)
+  Reader.Process("cbpnwtocoo", "dl.cbpnwtocoo", nothing)
+  Reader.Process("cbdimtocoo", "dl.cbdimtocoo", nothing)
+  Reader.Process("cbsmtocoo", "dl.cbsmtocoo", nothing)
+
+  Reader.Process("cbqtytocert", "dl.cbqtytocert", nothing)
+  Reader.Process("cbpctocert", "dl.cbpctocert", nothing)
+  Reader.Process("cbpgwtocert", "dl.cbpgwtocert", nothing)
+  Reader.Process("cbpnwtocert", "dl.cbpnwtocert", nothing)
+  Reader.Process("cbdimtocert", "dl.cbdimtocert", nothing)
+  Reader.Process("cbsmtocert", "dl.cbsmtocert", nothing)
+
+  #  Editable labels
+  Reader.Process("lonboarddate","dl.lonboarddate",nothing)
+  Reader.Process("llpd","dl.llpd",nothing)
+  Reader.Process("lflowinvno","dl.lflowinvno",nothing)
+  Reader.Process("llcno","dl.llcno",nothing)
+  Reader.Process("lflowlcdateissued","dl.lflowlcdateissued",nothing)
+  Reader.Process("llcdateissued","dl.llcdateissued",nothing)
+  Reader.Process("lflowlissuedby","dl.lflowlissuedby",nothing)
+  Reader.Process("lissuedby","dl.lissuedby",nothing)
+  Reader.Process("lflowissuedby","dl.lflowissuedby",nothing)
+  Reader.Process("linvoicenumber","dl.linvoicenumber",nothing)
+  Reader.Process("linvoiceamount","dl.linvoiceamount",nothing)
+  
+  Reader.Process("lpinvoicenumber","dl.lpinvoicenumber",nothing)
+  Reader.Process("lbuyerreference","dl.lbuyerreference",nothing)
+  Reader.Process("lflowbuyerreference","dl.lflowbuyerreference",nothing)
+  Reader.Process("lcontractno","dl.lcontractno",nothing)
+  Reader.Process("lflowcontractno","dl.lflowcontractno",nothing)
+  Reader.Process("lrefno","dl.lrefno",nothing)
+  Reader.Process("lflowrefno","dl.lflowrefno",nothing)
+  Reader.Process("lrefno2","dl.lrefno2",nothing)
+  Reader.Process("lflowrefno2","dl.lflowrefno2",nothing)
+  Reader.Process("lrefno3","dl.lrefno3",nothing)
+  Reader.Process("lrefno4","dl.lrefno4",nothing)
+  Reader.Process("lmiscint1","dl.lmiscint1",nothing)
+  Reader.Process("proceedsRcvd","dllocal.proceedsRcvd",nothing)
+  Reader.Process("prcRcvdInvAmtCcy","dllocal.prcRcvdInvAmtCcy",nothing)
+  Reader.Process("prcRcvdInvAmt","dllocal.prcRcvdInvAmt",nothing)
+  Reader.Process("prcRcvdAdvAmtCcy","dllocal.prcRcvdAdvAmtCcy",nothing)
+  Reader.Process("prcRcvdAdvAmt","dllocal.prcRcvdAdvAmt",nothing)
+  Reader.Process("principalCreditAccNum","dllocal.principalCreditAccNum",nothing)
+  Reader.Process("lflowshortdesc","dl.lflowshortdesc",nothing)
+  Reader.Process("lshortdescription","dl.lshortdescription",nothing)
+  Reader.Process("lfulldescription","dl.lfulldescription",nothing)
+  Reader.Process("lbeneficiaryname","dl.lbeneficiaryname",nothing)
+  Reader.Process("lalternatesoldto","dl.lalternatesoldto",nothing)
+  Reader.Process("lconsignee","dl.lconsignee",nothing)
+  Reader.Process("lnotify","dl.lnotify",nothing)
+  Reader.Process("lhawb","dl.lhawb",nothing)
+  Reader.Process("lmawb","dl.lmawb",nothing)
+  Reader.Process("lflightno","dl.lflightno",nothing)
+  Reader.Process("flightnumbers","dllocal.flightnumbers",nothing)
+  Reader.Process("lcarrier","dl.lcarrier",nothing)
+  Reader.Process("lbookingnumber","dl.lbookingnumber",nothing)
+  Reader.Process("lblnumber","dl.lblnumber",nothing)
+  Reader.Process("lvessel","dl.lvessel",nothing)
+  Reader.Process("liMONumber","cover.liMONumber",nothing)
+  Reader.Process("ltransportMode","cover.ltransportMode",nothing)
+  Reader.Process("loceancarrier","dl.loceancarrier",nothing)
+  Reader.Process("lein","dl.lein",nothing)
+  Reader.Process("llei","dl.llei",nothing)
+  Reader.Process("lsed","dl.lsed",nothing)
+
+  Reader.Process("lplaceofreceipt","dl.lplaceofreceipt",nothing)
+  Reader.Process("lloadingport","dl.lloadingport",nothing)
+  Reader.Process("ldischargeport","dl.ldischargeport",nothing)
+  Reader.Process("lfinaldestination","dl.lfinaldestination",nothing)
+
+# HIDDEN FIELDS TO CAPTURE BANK COVER DATA FOR JPMC TRADEBRIDGE
+  Reader.Process("airportofloading","cover.airportofloading",nothing)
+  Reader.Process("airportofdischarge","cover.airportofdischarge",nothing)
+  Reader.Process("vesselportofloading","cover.vesselportofloading",nothing)
+  Reader.Process("vesselportofdischarge","cover.vesselportofdischarge",nothing)
+  Reader.Process("shipfrom","cover.shipfrom",nothing)
+  Reader.Process("shipto","cover.shipto",nothing)
+  Reader.Process("bargeportofloading","cover.bargeportofloading",nothing)
+  Reader.Process("bargeportofdischarge","cover.bargeportofdischarge",nothing)
+  Reader.Process("railportofloading","cover.railportofloading",nothing)
+  Reader.Process("railportofdischarge","cover.railportofdischarge",nothing)
+
+  Reader.Process("ldimensions","dl.ldimensions",nothing)
+  Reader.Process("lpackageweight","dl.lpackageweight",nothing)
+  Reader.Process("lpackagenetweight","dl.lpackagenetweight",nothing)
+  Reader.Process("lquantity","dl.lquantity",nothing)
+  Reader.Process("llcquantity","dl.llcquantity",nothing)
+  Reader.Process("lpackagecount","dl.lpackagecount",nothing)
+
+  Reader.Process("lponumber","dl.lponumber",nothing)
+  Reader.Process("lpodate","dl.lpodate",nothing)
+  Reader.Process("larrivaldate","dl.larrivaldate",nothing)
+  Reader.Process("lmarksnumbers","dl.lmarksnumbers",nothing)
+  Reader.Process("lflowmarks","dl.lflowmarks",nothing)
+  Reader.Process("lflowmarksdraft","dl.lflowmarksdraft",nothing)
+
+  Reader.Process("factoryname","factoryname",nothing)
+
+
+
+  Reader.Process("miscdate1","dllocal.miscdate1",nothing)
+  Reader.Process("miscdate2","dllocal.miscdate2",nothing)
+  Reader.Process("miscdate3","dllocal.miscdate3",nothing)
+  Reader.Process("miscdate4","dllocal.miscdate4",nothing)
+
+
+  snstatus = "dllocal"
+
+#  Transaction Summary data
+  Reader.Process("note1","dplocal.note1",nothing)
+  Reader.Process("comborefno5","dllocal.comborefno5",nothing)
+  Reader.Process("refno5","dllocal.ref1",nothing)
+  Reader.Process("refno6","dllocal.ref2",nothing)
+  Reader.Process("refno7","dllocal.ref3",nothing)
+  Reader.Process("refno8","dllocal.ref4",nothing)
+
+
+
+#  From Data - LC
+  Reader.Process("31ddate","31ddate",nothing)
+  Reader.Process("48days","48days",nothing)
+  Reader.Process("lird","dllocal.lird, lird",nothing)
+  Reader.Process("44cs","44cs",nothing)
+  Reader.Process("50country","50country",nothing)
+  Reader.Process("advisingno","AdvNumber",nothing)
+  
+  Reader.Process("cbConfigurationFile","dllocal.cbConfigurationFile",nothing)
+
+  for _lineno in range(1, int(MAXLINESCOUNT) + 1):
+      Reader.Process("waitingdate" + str(_lineno), sn + ".waitingdate" + str(_lineno), nothing)
+      Reader.Process("waitingnote" + str(_lineno), sn + ".waitingnote" + str(_lineno), nothing)
+      Reader.Process("docprep" + str(_lineno), sn + ".docprep" + str(_lineno), nothing)
+
+  for _lineno in range(1, int(MAXTODOCOUNT) + 1):									  
+      Reader.Process("cbtodo1-" + str(_lineno), sn + ".cbtodo1-" + str(_lineno), nothing)
+      Reader.Process("todo1-" + str(_lineno), sn + ".todo1-" + str(_lineno), nothing)					  
+      Reader.Process("tododate1-" + str(_lineno), sn + ".tododate1-" + str(_lineno), nothing)
+
+
+## BANK COVER
+  Reader.Process("negotiatingbankcover", "cover.negotiatingbankcover,NegotBank",nothing)
+  Reader.Process("negotname", "cover.negotname",nothing)
+  Reader.Process("negotaddress-1", "cover.negotaddress-1",nothing)
+  Reader.Process("negotaddress-2", "cover.negotaddress-2",nothing)
+  Reader.Process("negotaddress-3", "cover.negotaddress-3",nothing)
+  Reader.Process("negotbankcountry", "cover.negotbankcountry",nothing)
+
+  Reader.Process("collectingbankcover", "cover.collectingbankcover,51a",nothing)
+  Reader.Process("collectingbank", "51a",nothing)
+  Reader.Process("collectingbankname", "cover.issuebank",nothing)
+  Reader.Process("collectingbankaddress-1", "cover.collectingbankaddress-1",nothing)
+  Reader.Process("collectingbankaddress-2", "cover.collectingbankaddress-2",nothing)
+  Reader.Process("collectingbankaddress-3", "cover.collectingbankaddress-3",nothing)
+  Reader.Process("issuebankcountry", "cover.issuebankcountry",nothing)
+  Reader.Process("collectingbankBIC", "cover.collectingbankBIC",nothing)
+
+
+  Reader.Process("applicantcover", "cover.applicantcover,50",nothing)
+  Reader.Process("applicant", "50",nothing)
+  Reader.Process("applicantname", "cover.applicantname",nothing)
+  Reader.Process("applicantaddress-1", "cover.applicantaddress-1",nothing)
+  Reader.Process("applicantaddress-2", "cover.applicantaddress-2",nothing)
+  Reader.Process("applicantaddress-3", "cover.applicantaddress-3",nothing)
+  Reader.Process("applicantcountry", "50country",nothing)
+
+  Reader.Process("beneficiarycover", "cover.beneficiarycover,59",nothing)
+  Reader.Process("beneficiary", "59",nothing)
+  Reader.Process("beneficiaryaddress-1", "cover.beneficiaryaddress-1",nothing)
+  Reader.Process("beneficiaryaddress-2", "cover.beneficiaryaddress-2",nothing)
+  Reader.Process("beneficiaryaddress-3", "cover.beneficiaryaddress-3",nothing)
+  Reader.Process("beneficiarycountry", "cover.drawercountry",nothing)
+
+
+  Reader.Process("beneficiarycontact", "cover.beneficiarycontact", nothing)
+
+  Reader.Process("specialinstructions", "cover.specialinstructions", nothing)
+
+  Reader.Process("b2bcreditnumber", "cover.b2bcreditnumber", nothing)
+
+  Reader.Process("cbAgree", "cover.cbAgree", nothing)
+
+  Reader.Process("bankreference", "AdvNumber",nothing)
+  Reader.Process("tenorDays", "cover.tenorDays,numberofdays", nothing)
+  Reader.Process("numberofdays","numberofdays",nothing)
+  Reader.Process("combotenordescription", "cover.combotenordescription", nothing)
+  Reader.Process("BankSelect", "dllocal.BankSelect", nothing)
+  Reader.Process("tenorDescription", "cover.tenorDescription", nothing)
+  Reader.Process("mixedtenordetails", "cover.mixedtenordetails", nothing)
+  Reader.Process("othertenordescription", "cover.othertenordescription", nothing)
+  Reader.Process("maturitydate", "datematurity", nothing)
+  Reader.Process("covermaturitydate", "cover.maturitydate", nothing)
+  Reader.Process("draftmaturitydate", "draft.maturityDate", nothing)
+  Reader.Process("combodocsagainst", "cover.combodocsagainst", nothing)
+  Reader.Process("documentAgainstPayment", "cover.documentAgainstPayment", nothing)
+  Reader.Process("documentAgainstAcceptance", "cover.documentAgainstAcceptance", nothing)
+  Reader.Process("freeofPayment", "cover.freeofPayment", nothing)
+  Reader.Process("discountFinancingInstructions", "cover.discountFinancingInstructions", nothing)
+  Reader.Process("combofinance", "cover.combofinance", nothing)
+  Reader.Process("comboavalization", "cover.comboavalization", nothing)
+  Reader.Process("combodraftspresented", "cover.combodraftspresented", nothing)
+  Reader.Process("combotranslation", "cover.combotranslation", nothing)
+
+
+  Reader.Process("cbexamineDocuments", "cover.cbexamineDocuments", nothing)
+  Reader.Process("cbnegpurchaseprepay", "cover.cbnegpurchaseprepay", nothing)
+  Reader.Process("cbnegpurchaseprepayafteracceptance", "cover.cbnegpurchaseprepayafteracceptance", nothing)
+  Reader.Process("cbnegpurchaseprepaycomplypresentation", "cover.cbnegpurchaseprepaycomplypresentation", nothing)
+  Reader.Process("cbsendDocumentsnofinancing", "cover.cbsendDocumentsnofinancing", nothing)
+  Reader.Process("cbsendDocumentsnofinancingwithChecking", "cover.cbsendDocumentsnofinancingwithChecking", nothing)
+  Reader.Process("cbsendDocumentsnofinancingNoChecking", "cover.cbsendDocumentsnofinancingNoChecking", nothing)
+  Reader.Process("cbsendonApproval", "cover.cbsendonApproval", nothing)
+
+  Reader.Process("cbfinanceUnder", "cover.cbfinanceUnder", nothing)
+  Reader.Process("cbfinanceUnderDP", "cover.cbfinanceUnderDP", nothing)
+  Reader.Process("cbfinanceUnderDA", "cover.cbfinanceUnderDA", nothing)
+  Reader.Process("cbpaymentUnder", "cover.cbpaymentUnder", nothing)
+  Reader.Process("cbpaymentUnderDP", "cover.cbpaymentUnderDP", nothing)
+  Reader.Process("cbpaymentUnderDA", "cover.cbpaymentUnderDA", nothing)
+
+  Reader.Process("comboourChargesOn", "cover.comboourChargesOn", nothing)
+  Reader.Process("ourChargesOn", "cover.ourChargesOn", nothing)
+
+  Reader.Process("combooverseasBankChargesOn", "cover.combooverseasBankChargesOn", nothing)
+  Reader.Process("overseasBankChargesOn", "cover.overseasBankChargesOn", nothing)
+  Reader.Process("overseasBankChargesWaive", "cover.overseasBankChargesWaive", nothing)
+
+  Reader.Process("comboacceptanceMayBedeferredUntilArrivalOfVessel", "cover.comboacceptanceMayBedeferredUntilArrivalOfVessel", nothing)
+  Reader.Process("acceptanceMayBedeferredUntilArrivalOfVessel", "cover.acceptanceMayBedeferredUntilArrivalOfVessel", nothing)
+
+  Reader.Process("combocableAdviceForNon", "cover.combocableAdviceForNon", nothing)
+  Reader.Process("cableAdviceForNonPayment", "cover.cableAdviceForNonPayment", nothing)
+  Reader.Process("cableAdviceForNonAcceptance", "cover.cableAdviceForNonAcceptance", nothing)
+
+  Reader.Process("combocableAdviceFor", "cover.combocableAdviceFor", nothing)
+
+  Reader.Process("comboProtestFor", "cover.comboProtestFor", nothing)
+  Reader.Process("protestForNonAcceptance", "cover.protestForNonAcceptance", nothing)
+  Reader.Process("protestForNonPayment", "cover.protestForNonPayment", nothing)
+
+  Reader.Process("comboProtestForNon", "cover.comboProtestForNon", nothing)
+  Reader.Process("doNotProtest", "cover.doNotProtest", nothing)
+
+  Reader.Process("combowaiveinterest", "cover.combowaiveinterest", nothing)
+  Reader.Process("waiveInterest", "cover.waiveInterest", nothing)
+
+  Reader.Process("comboourChargesWaive", "cover.comboourChargesWaive", nothing)
+  Reader.Process("ourChargesWaive", "cover.ourChargesWaive", nothing)
+
+  Reader.Process("cbFeeOurAccount", "cover.cbFeeOurAccount", nothing)
+  Reader.Process("cbForwardDocuments", "cover.cbForwardDocuments", nothing)
+  Reader.Process("cbCollectInterest", "cover.cbCollectInterest", nothing)
+  Reader.Process("interestRateinPcT", "cover.interestRateinPcT", nothing)
+  Reader.Process("interestRateStartDate", "cover.interestRateStartDate", nothing)
+  Reader.Process("interestRateMaturityDate", "cover.interestRateMaturityDate", nothing)
+
+  Reader.Process("rbSettlementInstructions", "cover.rbSettlementInstructions", nothing)
+  Reader.Process("accountno1", "cover.accountno1", nothing)
+  Reader.Process("beneficiaryAccountCCYCode", "cover.beneficiaryAccountCCYCode", nothing)
+  Reader.Process("deductamt", "cover.deductamt", nothing)
+  Reader.Process("importbill", "cover.importbill", nothing)
+  Reader.Process("accountno2", "cover.accountno2", nothing)
+  Reader.Process("intermediarybank", "cover.intermediarybank", nothing)
+  Reader.Process("accountno3", "cover.accountno3", nothing)
+  Reader.Process("cbDeductCharges", "cover.cbDeductCharges", nothing)
+  Reader.Process("wiretransfer", "cover.wiretransfer", nothing)
+  Reader.Process("beneficiaryAccountNo", "cover.beneficiaryAccountNo", nothing)
+
+
+
+
+
+  #
+  #  DATA - LOGISTICS labels
+  #
+  Reader.Default("doctitle", "[DATA - LOGISTICS]")
+  Reader.Default("header1", "Shipment Details")
+  Reader.Default("header2", "Packaging Information")
+  Reader.Default("header3", "Air Shipments")
+  Reader.Default("header4", "Ocean/FCR Shipments")
+  Reader.Default("header5", "Customer Document Stamp")
+  Reader.Default("header6", "Customer Document Logo")
+  Reader.Default("header7", "Shipment Advice Fax - additional details")
+  Reader.Default("header8", "Transport Details")
+  Reader.Default("header9", "Miscellaneous Data/Fees")
+  Reader.Default("header10", "Internal Billing Information")
+  Reader.Default("header12", "Certificate of Origin")
+  Reader.Default("header13", "Offline Storage Info")
+
+  Reader.Default("ldocpreparer", "DOCUMENT PREPARER")
+##   PLATSUP-2472 - Change Reset LC button to checkbox
+  Reader.Default("lcbclearLCData", "CLEAR LC DATA")
+  Reader.Default("lcbclearDraftClause", "CLEAR DRAFT CLAUSES")
+  Reader.Default("lcontactemail", "OFFICE GROUP EMAIL")
+  Reader.Default("lcontactoffice", "OFFICE ADDRESS, PHONE, FAX")
+  Reader.Default("lonboarddate", "ONBOARD DATE")
+  Reader.Default("ldprreceived", "DPR RECEIVED DATE")
+  Reader.Default("learliestshipdate", "LC WORKABILITY RECEIVED DATE")
+  Reader.Default("lworkabilitydatesent", "LC WORKABILITY SENT DATE")
+  Reader.Default("lfirstadvicedate", "FIRST ADVICE DATE")
+  Reader.Default("lsecondadvicedate", "SECOND ADVICE DATE")
+
+
+
+
+##   DOC-9606 - Workaround to force LC Number to read most current
+#               Don't know why, but l20 checkbox was not read correctly 
+  templ20 = Reader.Get("l20",nothing)
+  Reader.Default("l20", templ20 )
+  
+  lcno = Reader.Get("20", nothing)
+  if (templ20 == "Yes") :
+      Reader.Default("lcno", lcno )
+      Reader.Default("llcno", "LC NUMBER")
+#  PLATSUP - 242
+      Reader.Default ("LetterOfCreditNumber", lcno)
+
+  cb4 = Reader.Get("dl.cb4", nothing)
+  if cb4 == "Yes" or cb4 == "":
+	  Reader.Default("notifyawb", Reader.Get("50", nothing))
+  Reader.Default("notify", Reader.Get("50", nothing))
+  Reader.Default("applicant", applicant)
+  Reader.Default("beneficiary", beneficiary)
+
+
+  Reader.Default("lcdateissued", Reader.Get("31cs", nothing) )
+  Reader.Default("llcdateissued", "DATED")
+  Reader.Default("lissuedby", "ISSUED BY")
+  Reader.Default("linvoicenumber", "INVOICE NO.")
+  Reader.Default("lfinalacceptance", "FINAL ACCEPTANCE")
+  Reader.Default("lfinalacceptance90", "90 days")
+  Reader.Default("lfinalacceptance120", "120 days")
+  Reader.Default("linvoicedate", "INVOICE DATE")
+  Reader.Default("linvoiceamount", "TOTAL INVOICE VALUE")
+  Reader.Default("lcurrencycode", "CURRENCY CODE")
+  Reader.Default("lproformainv", "PROFORMA INVOICE")
+  Reader.Default("lpdate", "DATE")
+  Reader.Default("lpinvoicenumber", "INVOICE NO.")
+  Reader.Default("lpinvoiceamount", "AMOUNT:")
+  Reader.Default("ldraftamount", "TOTAL DRAFT AMOUNT")
+
+  Reader.Default("lblnte", "BL")
+  Reader.Default("linvnte", "INV")
+  Reader.Default("lothernte", "OTHER")
+
+
+  Reader.Default("lproceedsRcvd", "PROCEEDS RECEIVED")
+  Reader.Default("lprcRcvdInvAmtCcy", "PROCEEDS RECEIVED INVOICE AMT CUR")
+  Reader.Default("lprcRcvdInvAmt", "PROCEEDS RECEIVED INVOICE AMT")
+  Reader.Default("lprcRcvdAdvAmtCcy", "PROCEEDS RECEIVED ADV AMT CUR")
+  Reader.Default("lprcRcvdAdvAmt", "PROCEEDS RECEIVED ADV AMT")
+  Reader.Default("lprincipalCreditAccNum", "PRINCIPAL CREDIT ACC NUM")
+
+  Reader.Default("lcleardraftclause", "RESET CLAUSE FOR DRAFT")
+  Reader.Default("ldraftclause", "CLAUSE FOR DRAFT")
+  Reader.Default("ldraftclause2", "CUSTOM CLAUSE FOR DRAFT")
+  draftclause = ""
+  temp = Reader.Get("dl.issuedby,51a",nothing)
+  temp1 = ""
+  if not IsNullOrEmpty(temp) :
+      temp1 = self.WordWrapText(temp)
+      draftclause = "DRAWN UNDER " + temp1
+  if templ20 == "Yes":
+      if draftclause == "" :
+          draftclause = "DRAWN UNDER "
+      draftclause = draftclause + "DOCUMENTARY LETTER OF CREDIT NO. " + lcno
+  if Reader.Get("dl.lcdateissued,31cs",nothing) != "":
+      draftclause = draftclause + " ISSUED ON " + Reader.Get("dl.lcdateissued-docs,31cs", nothing)
+  Reader.Default("draftclause", draftclause)
+  Reader.Default("overridedraftclause", draftclause)
+
+  Reader.Default("ldraftpayee", "DRAFT PAYEE")
+  Reader.Default("draftpayee", Reader.Get("OrderOf",nothing))
+
+  if Reader.Get("master.draftpercent", nothing) != "":
+	  Reader.Default("draftpercent1",Reader.Get("master.draftpercent", nothing))
+  Reader.Default("lincoterms", "INCOTERMS")
+  Reader.Default("ldraftdate", "DRAFT DATE")
+  Reader.Default("ltenor1", "DRAFT #1 AMOUNT/TENOR")
+  Reader.Default("ltenor2", "DRAFT #2 AMOUNT/TENOR")
+  Reader.Default("ltenor3", "DRAFT #3 AMOUNT/TENOR")
+#   DOC-9216 - add tenor type, default to SIGHT
+  Reader.Default("ltenorType", "TENOR TYPE")
+  Reader.Default("tenorType", "SIGHT")
+  Reader.Default("ldraftplaceofissue", "DRAFT PLACE OF ISSUE")
+  Reader.Default("ldraftpercent", "% OF INVOICE")
+  Reader.Default("lbl", "BOL")
+  Reader.Default("linv", "INV")
+  Reader.Default("lnone", "N/A")
+  Reader.Default("lpl", "PL")
+  Reader.Default("lcoo", "COO")
+  Reader.Default("lcert", "CERT")
+  Reader.Default("cbnote", "Checkboxes above are for EMEA Simple doc-set only.")
+
+  labeltext = "BUYER REFERENCE"
+  temp = Reader.GetCustomer("cp.cblablbuyerreference")
+  if not IsNullOrEmpty(temp) and temp == "Yes" :
+      labeltext = Reader.GetCustomer("cp.lbuyerreference")
+  Reader.Default("lbuyerreference", labeltext)
+  labeltext = "CONTRACT NUMBER"
+  temp = Reader.GetCustomer("cp.cblablcontractno")
+  if not IsNullOrEmpty(temp) and temp == "Yes" :
+      labeltext = Reader.GetCustomer("cp.lcontractno")
+  Reader.Default("lcontractno", labeltext)
+
+  Reader.Default ("lpresenterReference", "PRESENTER REFERENCE")
+
+  ttlogistics.SetDefaultDateLabels(Reader)
+
+  Reader.Default("lfulldescription", "DESCRIPTION OF GOODS AND/OR SERVICES")
+  Reader.Default("descnote", "If this checkbox is checked, uncheck it if you are editing the Full Description field and need to have the Short Description field adjusted accordingly.")
+  Reader.Default("lpartialshipment", "PARTIAL SHIPMENT")
+
+  Reader.Default("lbeneficiaryname", "BENEFICIARY")
+  Reader.Default("ltransportdocshipper", "TRANSPORT DOC SHIPPER")
+  Reader.Default("lendorsetransportdoc", "Transport Document Endorsement")
+  Reader.Default("lendorseinsurance", "Insurance Document Endorsement")
+  Reader.Default("linsurancedoctitle", "Include Document Name on Insurance Document")
+  Reader.Default("endorsement", "ENDORSED BY:" + vbcrlf)
+  Reader.Default("endorsementinsurance", "ENDORSED BY:" + vbcrlf)
+  Reader.Default("lplaceofissue", "PLACE OF ISSUE")
+  Reader.Default("lforwardername", "FORWARDER NAME")
+  Reader.Default("lforwarder", "FORWARDER NAME/ADDRESS")
+  Reader.Default("lforwarderref", "FORWARDER REFERENCE")
+  Reader.Default("lbeneficiary", "BENEFICIARY")
+  Reader.Default("lapplicant", "APPLICANT:")
+  Reader.Default("lconsignee", "CONSIGNEE")
+  Reader.Default("lconsignee1", "TO ORDER OF SHIPPER")
+  Reader.Default("lconsignee2", "Issuing Bank")
+  Reader.Default("lconsignee3", "Applicant")
+  Reader.Default("lconsignee4", "None, Clear Field")
+  Reader.Default("locean", "OCEAN SHIPMENTS")
+  Reader.Default("lair", "AIR SHIPMENTS")
+  Reader.Default("lalternatesoldto", "ALTERNATE SOLD TO")
+  Reader.Default("lnotify", "NOTIFY")
+  Reader.Default("freightprepaid", "\"" + "FREIGHT PREPAID" + "\"")
+  Reader.Default("freightcollect", "\"" + "FREIGHT COLLECT" + "\"")
+  Reader.Default("l50country", "COUNTRY:")
+
+
+  Reader.Default("liatacode", "Agent's IATA Code")
+  Reader.Default("lto", "TO")
+  Reader.Default("lby", "BY")
+  Reader.Default("lcurrency", "TRANSPORT DOCUMENT CURRENCY")
+  Reader.Default("currency", Reader.Get("32bc", nothing))
+  Reader.Default("currencycode", Reader.Get("32bc", nothing))
+  Reader.Default("linsuranceamount", "Amount of Insurance")
+  Reader.Default("insuranceamount", "XXX")
+  Reader.Default("lrate", "Rate/Charge")
+  Reader.Default("lrate2", "Rate Class/Comm")
+  Reader.Default("lchargeableweight", "Chargeable Weight")
+  Reader.Default("lchcode", "CHCode")
+  Reader.Default("lwtval", "WT/Val Other")
+  Reader.Default("ldeclaredvaluecarriage", "Declared Value Carriage")
+  Reader.Default("ldeclaredvaluecustoms", "Declared Value Customs")
+  Reader.Default("declaredvaluecustoms", "NVD")
+  Reader.Default("declaredvaluecarriage", "NVD")
+  Reader.Default("lhawb", "HAWB")
+  Reader.Default("lmawb", "MAWB")
+  Reader.Default("lflightno", "FLIGHT NUMBER")
+  Reader.Default("lflightno2", "2ND FLIGHT/DATE FIELD")
+  Reader.Default("lflightno3", "3RD FLIGHT/DATE FIELD")
+  Reader.Default("lflightno4", "4TH FLIGHT/DATE FIELD")
+  Reader.Default("lflightnumbers", "FLIGHT NUMBERS")
+  Reader.Default("lcarrier", "AIR CARRIER NAME")
+  Reader.Default("ffnamenote", "For Ocean, select:" + vbcrlf + "Agent, Carrier, or Ocean Carrier.")
+  Reader.Default("mawbnote", "Select for MAWB.")
+  Reader.Default("ffagent", "Agent")
+  Reader.Default("ffcarrier", "Carrier")
+  Reader.Default("ffshipper", "Shipper")
+  Reader.Default("ocarrier", "Ocean Carrier")
+  Reader.Default("lonboardstatementtext", "ONBOARD STATEMENT TEXT")
+  Reader.Default("lonboardstatement", "DEFAULT ONBOARD STATEMENT")
+  Reader.Default("lonboardstatementcustom", "CUSTOM ONBOARD STATEMENT")
+  Reader.Default("loaded", "LOADED CLEAN ON BOARD")
+  Reader.Default("loadedat", "AT")
+  Reader.Default("loadedon", "ON")
+  Reader.Default("clearcarrier", "No Agent or Carrier")
+  Reader.Default("aircarrier", "Air Carrier")
+
+
+
+  tempfn1 = Reader.Get("dl.flightno", nothing)
+  tempfn2 = Reader.Get("dl.flightno2", nothing)
+  tempfn3 = Reader.Get("dl.flightno3", nothing)
+  tempfn4 = Reader.Get("dl.flightno4", nothing)
+
+  tempfd1 = Reader.Get("dl.flightdate1", nothing)
+  tempfd2 = Reader.Get("dl.flightdate2", nothing)
+  tempfd3 = Reader.Get("dl.flightdate3", nothing)
+  tempfd4 = Reader.Get("dl.flightdate4", nothing)
+
+  tempfnd1 = Reader.Get("dl.flightnodate1", nothing)
+  tempfnd2 = Reader.Get("dl.flightnodate2", nothing)
+  tempfnd3 = Reader.Get("dl.flightnodate3", nothing)
+  tempfnd4 = Reader.Get("dl.flightnodate4", nothing)
+
+  tempfn = Reader.Get("dl.flightnumbers", nothing)
+
+  if not IsNullOrEmpty(tempfn1) and not IsNullOrEmpty(tempfd1) and IsNullOrEmpty(tempfnd1):
+      Reader.Default("flightnodate1", tempfn1 + "/" + tempfd1)
+  if not IsNullOrEmpty(tempfn1) and IsNullOrEmpty(tempfd1):
+      Reader.Default("flightnodate1", tempfn1)
+
+  if not IsNullOrEmpty(tempfn2) and not IsNullOrEmpty(tempfd2) and IsNullOrEmpty(tempfnd2):
+      Reader.Default("flightnodate2", tempfn2 + "/" + tempfd2)
+  if not IsNullOrEmpty(tempfn2) and IsNullOrEmpty(tempfd2):
+      Reader.Default("flightnodate2", tempfn2)
+
+  if not IsNullOrEmpty(tempfn3) and not IsNullOrEmpty(tempfd3) and IsNullOrEmpty(tempfnd3):
+      Reader.Default("flightnodate3", tempfn3 + "/" + tempfd3)
+  if not IsNullOrEmpty(tempfn3) and IsNullOrEmpty(tempfd3):
+      Reader.Default("flightnodate3", tempfn3)
+
+  if not IsNullOrEmpty(tempfn4) and not IsNullOrEmpty(tempfd4) and IsNullOrEmpty(tempfnd4):
+      Reader.Default("flightnodate4", tempfn4 + "/" + tempfd4)
+  if not IsNullOrEmpty(tempfn4) and IsNullOrEmpty(tempfd4):
+      Reader.Default("flightnodate4", tempfn4)
+
+  if not IsNullOrEmpty(tempfn1)and IsNullOrEmpty(tempfn):
+      Reader.Default("flightnumbers", tempfn1 + " " + tempfn2 + " " + tempfn3 + " " + tempfn4)
+
+  Reader.Default("lbookingnumber", "BOOKING NUMBER")
+  Reader.Default("lblnumber", "BL NUMBER")
+  Reader.Default("lbltrackingnumber", "BL TRACKING NUMBER")
+  Reader.Default("liMONumber", "IMO NUMBER")
+  Reader.Default("ltransportMode", "TRANSPORTATION MODE")
+  Reader.Default("lvessel", "CARRYING VESSEL")
+  Reader.Default("loceancarrier", "OCEAN CARRIER")
+
+  Reader.Default("lein", "BENEFICIARY ID / EIN")
+  Reader.Default("ein", Reader.GetCustomer("cp.ein"))
+  Reader.Default("llei", "BENEFICIARY LEI")
+  Reader.Default("lei", Reader.GetCustomer("cp.lei"))
+  Reader.Default("lsed", "ITN")
+  Reader.Default("lusshipment", "SHIPMENT FROM THE U.S.A.")
+  Reader.Default("lusshipmentnote", "For EMEA site, if required, select appropriate statement on page 3.  Otherwise, uncheck this box.")
+  Reader.Default("lbeneficiaryid", "BENEFICIARY ID")
+
+  Reader.Default("lplaceofreceipt", "PLACE OF RECEIPT")
+  Reader.Default("lloadingport", "PORT/AIRPORT OF LOADING")
+  Reader.Default("ldischargeport", "PORT/AIRPORT OF DISCHARGE")
+  Reader.Default("lfinaldestination", "PLACE OF FINAL DESTINATION")
+  Reader.Default("finaldestination-note", "REMINDER: Update Final Destination, if required.")
+
+
+  Reader.Default("linlandrouting", "HANDLING INFORMATION")
+
+
+  Reader.Default("ldimensions", "DIMENSIONS")
+  Reader.Default("lpackageweight", "GROSS WEIGHT")
+  Reader.Default("lpackagenetweight", "NET WEIGHT")
+  Reader.Default("lquantity", "QUANTITY")
+  Reader.Default("llcquantity", "LC QUANTITY")
+  Reader.Default("qtyinvoice", "INVOICE")
+  Reader.Default("lpackagecount", "TOTAL NO. OF PCS")
+
+  Reader.Default("lponumber", "SUPPLY/PO ORDER NUMBER")
+  Reader.Default("lpodate", "SUPPLY/PO ORDER DATE")
+  Reader.Default("larrivaldate", "ETA")
+  Reader.Default("lcountryoforigin", "POINT OF ORIGIN")
+  Reader.Default("linsurancepct", "INSURANCE - % OF INVOICE VALUE")
+  Reader.Default("insurancepct", "1.1")
+  Reader.Default("insurancepctnote", "Enter value as a decimal.  For example, for 115%, enter 1.15 ")
+  Reader.Default("lmarksnumbers", "SHIPPING MARKS")
+
+  Reader.Default("lfactoryname", "FACTORY NAME")
+
+##  PLATSUP-1790  format shipmenteta to arrivaldate field per rbdate field selection
+
+  rb = Reader.Get("dl.rbdate", nothing)
+  dformat = "Yes"
+  if not IsNullOrEmpty(rb) and rb == "No" :
+      dformat = "No"
+  temp = Reader.Get("dl.shipmenteta", nothing)
+  temp2 = ""
+  if not IsNullOrEmpty(temp) :
+      temp2 = d1.SetSwiftDate_us_uk(temp, dformat)
+  Reader.Set("arrivaldate", temp2)
+
+#  DOC-9126 - JPMC export data configuration setting
+
+  Reader.Default("lstamptext", "CUSTOMER STAMP TEXT")
+  Reader.Default("stampinv", "INVOICE")
+  Reader.Default("stamppl", "PACKING LIST")
+  Reader.Default("stampchamberdoc", "CHAMBER DOCUMENTS")
+  Reader.Default("stampotherdocs", "ALL OTHER CUSTOMER DOCUMENTS")
+  Reader.Default("stamptransportdocs", "AIR WAYBILLS")
+
+  Reader.Default("lstampfwdrtext", "FREIGHT FORWARDER STAMP TEXT")
+  Reader.Default("stampawb", "AWB")
+  Reader.Default("stampbl", "BL")
+  Reader.Default("stampfcr", "FCR")
+  Reader.Default("stampcarriercert", "CARRIER CERTIFICATE")
+
+  Reader.Default("llogotext", "If a logo is required on the invoice document, you may enter logo text in one of the two fields below.   This text will flow to the appropriate field on the invoice document.  Enter text in one field only.  For option 1, the globe image must be selected on the signature tab in the presentation step.")
+  Reader.Default("option1", "Option 1 (autosize font):")
+  Reader.Default("option2", "Option 2 (font size 22):")
+
+  Reader.Default("lfilestoragereference", "FILE STORAGE REF #")
+
+  Reader.Default("lforwarderfee", "FORWARDER FEE")
+  Reader.Default("ldcarrier", "DOMESTIC CARRIER")
+  Reader.Default("ldcarrierfee", "DOMESTIC CARRIAGE FEE")
+  Reader.Default("licarrier", "INTERNATIONAL CARRIER")
+  Reader.Default("licarrierfee", "INTERNATIONAL CARRIAGE FEE")
+  Reader.Default("lins", "INSURANCE")
+  Reader.Default("linsfee", "INSURANCE FEE")
+  Reader.Default("linspect", "INSPECTOR")
+  Reader.Default("linspectfee", "INSPECTION FEE")
+  Reader.Default("dateformat-us", "mm/dd/yyyy")
+  Reader.Default("dateformat-uk", "dd-mmm-yyyy")
+  Reader.Default("lcreditamount", "CREDIT/CONTRACT AMOUNT")
+  Reader.Default("lcreditbalance", "CURRENT BALANCE")
+  Reader.Default("lcreditbalanceplus", "TOLERANCE AMT +")
+  Reader.Default("lcreditbalanceminus", "-")
+
+  Reader.Default("lsubPO-1", "Customer PO#")
+
+
+  draw = DocContext.Draw
+  drawReport = draw.DrawReport
+  temp = str(drawReport.CreditAmount)
+  Reader.Default("creditamount", temp)
+  temp = str(drawReport.CreditBalance)
+  Reader.Default("creditbalance", temp)
+  temp = str(drawReport.CreditBalancePlusTolerance)
+  Reader.Default("creditbalanceplus", temp)
+  temp = str(drawReport.CreditBalanceMinusTolerance)
+  Reader.Default("creditbalanceminus", temp)
+
+  Reader.Default("lbanknickname", "BANK NICKNAME")
+  Reader.Default("laddlcdoc", "ADD 'ORIGINAL LC ATTACHED' to BANK COVER DOC LIST")
+  Reader.Default("lpaymentinstructions", "PAYMENT INSTRUCTIONS")
+  Reader.Default("lpaymentBankName", "PAYMENT BANK NAME")
+  Reader.Default("lpaymentBankBIC", "PAYMENT BANK SWIFT/BIC")
+  Reader.Default("lpaymentBankAccountNo", "PAYMENT BANK ACCOUNT NO")
+  Reader.Default("lnegotiatingbank", "NEGOTIATING BANK")
+  Reader.Default("lpaytrade", "DEDUCT FROM PROCEEDS AMOUNT")
+  Reader.Default("cbpaytrade", Reader.GetCustomer("cp.cbpaytrade"))
+  Reader.Default("lpaytradeother", "DEDUCT FROM PROCEEDS OVERRIDE:")
+
+  Reader.Default("lcourier-name1", "COURIER NAME:")
+  Reader.Default("lcourier-accountno1", "COURIER ACCOUNT NO:")
+
+
+
+  fees = DocContext.Draw.Fees
+  dpnumber = fees.InvoiceReferenceNoRev
+  if IsNullOrEmpty(dpnumber) :
+      dpnumber = "BILLING INVOICE NOT CREATED"
+
+  currencycode = Reader.GetCustomer("BillingCurrencyCode")
+  Reader.Default("currencypaytrade", currencycode)
+  Reader.Default("lfrombilling", "Calculated amt from " + dpnumber)
+  im = InvoiceTotals()
+  amt = im.SetInvoiceTotal(DocContext)
+  if float(amt) != 0 :
+      fmtamt = ttbilling.FormatBillingAmount(Reader, amt, currencycode, EXCLUDECURRENCYSYMBOL, DEFAULTIFNULLOREMPTY)
+      Reader.Default("frombilling", fmtamt)
+
+  draw = DocContext.Draw
+  temp = Reader.GetCustomer("cp.cd-clientname")
+  if IsNullOrEmpty(temp) :
+      temp = draw.ClientName
+  Reader.Default("lmiscdates", "Custom Fields (update label in the Client Profile):")
+  temp = Reader.GetCustomer("cp.lmiscdate1")
+  if IsNullOrEmpty(temp) :
+      temp = "CUSTOM DATE #1"
+  Reader.Default("lmiscdate1", temp)
+  temp = Reader.GetCustomer("cp.lmiscdate2")
+  if IsNullOrEmpty(temp) :
+      temp = "CUSTOM DATE #2"
+  Reader.Default("lmiscdate2", temp)
+  temp = Reader.GetCustomer("cp.lmiscdate3")
+  if IsNullOrEmpty(temp) :
+      temp = "CUSTOM DATE #3"
+  Reader.Default("lmiscdate3", temp)
+  temp = Reader.GetCustomer("cp.lmiscdate4")
+  if IsNullOrEmpty(temp) :
+      temp = "CUSTOM DATE #4"
+  Reader.Default("lmiscdate4", temp)
+
+
+  Reader.Default("dateforward", Reader.Get("dateforward",nothing))
+  Reader.Default("ldateforward", "DATE TO ISSUING BANK")
+
+  Reader.Default("lcustomrefs", "Next 4 fields are Custom Fields (update label in the Client Profile):")
+  Reader.Default("lrefno", Reader.GetCustomer("cp.refno1label"))
+  Reader.Default("lrefno2", Reader.GetCustomer("cp.refno2label"))
+  Reader.Default("lrefno3", Reader.GetCustomer("cp.refno3label"))
+  Reader.Default("lrefno4", Reader.GetCustomer("cp.refno4label"))
+
+  Reader.Default("lmiscint1", Reader.GetCustomer("cp.int1label"))
+
+  Reader.Default("rbdate", Reader.GetCustomer("cp.rbdate"))
+  Reader.Default("cb3", Reader.GetCustomer("cp.cb3"))
+
+#  Certificate of Origin - including Chamber certificates
+
+  temp = Reader.GetCustomer("cp.coocountryoforigintext1")
+  if IsNullOrEmpty(temp) :
+      temp = "THE UNDERSIGNED DOES HEREBY DECLARE THAT THE GOODS AS DESCRIBED ABOVE ARE OF"
+  Reader.Default("coocountryoforigintext1", temp)
+ 
+  temp = Reader.GetCustomer("cp.coocountryoforigintext2")
+  if IsNullOrEmpty(temp) :
+      temp = "ORIGIN."
+  Reader.Default("coocountryoforigintext2", temp)
+
+  temp = Reader.GetCustomer("cp.coocountryoforigin")
+  if IsNullOrEmpty(temp) :
+      temp = "USA."
+  Reader.Default("coocountryoforigin", temp)
+
+  temp = Reader.GetCustomer("cp.coocountryoforigintext")
+  if IsNullOrEmpty(temp) :
+      temp = "THE UNDERSIGNED DOES HEREBY DECLARE THAT THE GOODS AS DESCRIBED ABOVE ARE OF USA ORIGIN."
+  Reader.Default("coocountryoforigintext", temp)
+
+
+  Reader.Default("lflowcootoinvoice", "FLOW COUNTRY OF ORIGIN TO INVOICE")
+  Reader.Default("cbcooinvoice", Reader.GetCustomer("cp.cbcooinvoice"))
+  Reader.Default("lcoocountryoforigintext", "CERTIFICATION STATEMENT")
+
+  Reader.Default("paymentinstructionsnote", "Bank Wire Instructions")
+
+  ttmasterdata.GetWireData(Reader)
+
+##   PET-1759 - populate bankname, BIC, and account number fields, if radio button already selected
+##     only for the first 4 wire instruction sets
+  bankname = ""
+  swift = ""
+  accountno = ""
+  temp = Reader.Get("dl.rbbank", nothing)
+  if not IsNullOrEmpty(temp) and temp != "Off" :
+      i = temp[4]
+      if int(i) <= 4 :
+          bankname = Reader.GetCustomer("cp.wire-bank-name" + str(i))
+          swift = Reader.GetCustomer("cp.wire-bank-swift" + str(i))
+          accountno = Reader.GetCustomer("cp.enc_wire-bank-accountno" + str(i))
+  Reader.Default("paymentBankName", bankname)
+  Reader.Default("paymentBankBIC", swift)
+  Reader.Default("paymentBankAccountNo", accountno)
+
+
+##   PLATSUP-1180 - set checkbox according to value in cb1
+#                   all AWB scripts check dl.cb1 
+  tmp = Reader.Get("dl.cb1", nothing)
+  if tmp == 'mawbcarrier' :
+      Reader.Set("cbaircarrier", "Yes")
+
+  draw = DocContext.Draw
+  Reader.Default("header-customername1", "Account: " + draw.ClientName + ", Transaction: " + str(draw.TransactionName) + ",  Draw: " + str(draw.DrawNumber))
+  Reader.Default("header-customername2", "Account: " + draw.ClientName + ", Transaction: " + str(draw.TransactionName) + ",  Draw: " + str(draw.DrawNumber))
+
+
+  #
+  #  DATA - LOGISTICS STATUS (TRANSACTION SUMMARY) labels
+  #
+
+
+
+
+  Reader.Default("lcbConfigurationFile", "CHECK TO REFRESH LABELS FROM CLIENT PROFILE")
+
+  Reader.Default("llird", "LAST INSTRUCTION RECEIVED DATE")
+  Reader.Default("llsd", "LAST SHIPMENT DATE")
+  Reader.Default("lexpirydate","LC EXPIRATION DATE")
+  Reader.Default("lestlatestpresentation","EST LATEST PRESENTATION DATE")
+  Reader.Default("lFACmilestone","FAC MILESTONE NTE DATE")
+  Reader.Default("lfacnoofdays","FAC NO OF DAYS")
+  Reader.Default("lntedays","NTE DAYS")
+
+  Reader.Default("lcertreq","CERTIFICATE REQUIRED")
+  Reader.Default("lexpecteddrawdate","EXPECTED DRAW DATE")
+  Reader.Default("lextraday","ADD EXTRA DAY")
+  Reader.Default("lFACpercentofinvoice","FINAL ACCEPTANCE PERCENTAGE")
+
+  Reader.Default("l48days", "NUMBER OF DAYS")
+  Reader.Default("lincoterm", "INCOTERM:")
+
+
+  
+#  PLATSUP-125 - check for null courier name in the Client Profile
+  temp = Reader.GetCustomer("cp.courier-name1")
+  if IsNullOrEmpty(temp) :
+      temp = "Courier #1"
+  Reader.Default("courier-name1", temp + ":")
+  Reader.Default("courier-accountno1", Reader.GetCustomer("cp.courier-accountno1"))
+
+
+  Reader.Default("llpd", "DEADLINE")
+  Reader.Default("lpd", str(draw.DrawReport.ExpiresDate.ToShortDateString()))
+
+
+# CLIENT IDENTIFIER DEFAULT FIELDS
+  Reader.Default("lTradebridgeUciSelectionnote", "Unique Client Identifier")
+  Reader.Default("lTradebridgeUci", "Default UCI No.")
+  Reader.Default("TradebridgeUciDefault", Reader.GetCustomerEncrypted("cfg.data.config.tradebridge.uci.default"))
+  Reader.Default("TradebridgeUciDefaultpartnerChannel", Reader.GetCustomer("cfg.data.config.tradebridge.uci.default.partnerChannel"))
+  Reader.Default("lTradebridgeUciAlternate","Alternate UCI No.:")
+  Reader.Default("lTradebridgeUciSelection", "UCI No.")
+  Reader.Default("lTradebridgeUciIdentifier", "Identifier")
+  Reader.Default("lclearucialternate", "Clear Alternate UCI No.")
+
+  MAXLINESCOUNT = 10
+  for _lineno in range(1, int(MAXLINESCOUNT) + 1):
+      Reader.Default("TradebridgeUci-" + str(_lineno), Reader.GetCustomer("cfg.data.config.tradebridge.uci." + str(_lineno))) 
+      Reader.Default("TradebridgeUciIdentifier-" + str(_lineno), Reader.GetCustomer("cp.locationtpscifd" + str(_lineno))) 
+      temp = Reader.GetCustomer("cfg.data.config.tradebridge.uci." + str(_lineno) + ".partnerChannel")
+      if not IsNullOrEmpty(temp) : 
+          Reader.Default("TradebridgeUcipartnerChannel-" + str(_lineno), temp ) 
+          Reader.Default("TradebridgepartnerChannelName-" + str(_lineno), Reader.GetCustomer("comboBankpartnerChannel-" + str(_lineno))) 
+
+  Reader.Default("ldocprep", "Follow Up Name")
+  Reader.Default("ltasklist", "Task List")
+  Reader.Default("ltododate", "Date Completed")
+  Reader.Default("lwaitingnote", "Comments")
+
+
+  Reader.Default("todono-1", "1")
+  Reader.Default("todono-2", "2")
+  Reader.Default("todono-3", "3")
+  Reader.Default("todono-4", "4")
+  Reader.Default("todono-5", "5")
+  Reader.Default("todono-6", "6")
+  Reader.Default("todono-7", "7")
+  Reader.Default("todono-8", "8")
+  Reader.Default("todono-9", "9")
+  Reader.Default("todono-10", "10")
+  Reader.Default("todono-11", "11")
+  Reader.Default("todono-12", "12")
+  Reader.Default("todono-13", "13")
+  Reader.Default("todono-14", "14")
+  Reader.Default("todono-15", "15")
+  Reader.Default("todono-16", "16")
+  Reader.Default("todono-17", "17")
+  Reader.Default("todono-18", "18")
+  Reader.Default("todono-19", "19")
+  Reader.Default("todono-20", "20")
+  Reader.Default("todono-21", "21")
+  Reader.Default("todono-22", "22")
+
+  Reader.Default("todo1-1", "PAYMENT INSTRUMENT RECEIVED")
+  Reader.Default("todo1-2", "ATTACH THIRD PARTY DOCUMENTS")
+  Reader.Default("todo1-3", "SELECTED DRAW DOCUMENTS/DATA INPUT FORMS")
+  Reader.Default("todo1-4", "SHIPMENT DETAILS RECEIVED")
+  Reader.Default("todo1-5", "SHIPPER'S DOCUMENTS RECEIVED")
+  Reader.Default("todo1-6", "SUBMIT PRESENTATION")
+  Reader.Default("todo1-7", "FOLLOW UP EXAMINATION DETAILS")
+  Reader.Default("todo1-8", "FOLLOW UP COURIER DETAILS")
+  Reader.Default("todo1-9", "PAYMENT NOTIFICATION/FOLLOW UP")
+  Reader.Default("todo1-10", "CREATE PLACEHOLDER DRAW")
+  Reader.Default("todo1-11", "BILLING AND CLOSE")
+  Reader.Default("todo1-12", "PENDING ORIGINALS")
+  Reader.Default("todo1-13", "PENDING PRINT")
+ # Reader.Default("todo1-14", "")
+ # Reader.Default("todo1-15", "")
+ # Reader.Default("todo1-16", "")
+ # Reader.Default("todo1-17", "")
+ # Reader.Default("todo1-18", "")
+ # Reader.Default("todo1-19", "")
+ # Reader.Default("todo1-20", "")
+ # Reader.Default("todo1-21", "")
+
+  Reader.Default("lexpshipdate", Reader.GetCustomer("cp.lexpshipdate"))
+  Reader.Default("lcargoreceiveddate", Reader.GetCustomer("cp.lcargoreceiveddate"))
+  Reader.Default("lsidate", Reader.GetCustomer("cp.lsidate"))
+  Reader.Default("lproofcopyrecvd", Reader.GetCustomer("cp.lproofcopyrecvd"))
+  Reader.Default("lreleasedtransportdocdate", Reader.GetCustomer("cp.lreleasedtransportdocdate"))
+  Reader.Default("ltransportdocdate", Reader.GetCustomer("cp.ltransportdocdate"))
+  Reader.Default("lthirdpartydocreceiveddate", Reader.GetCustomer("cp.lthirdpartydocreceiveddate"))
+
+
+
+
+## BANK COVER
+
+  d2 = BankDraftTT()
+
+  draftdate = d2.GetDraftDate(DocContext,Reader)
+  Reader.Default("dated", draftdate)
+
+  Reader.Default("paymentBankName-1", Reader.GetCustomer("cp.wire-bank-name1"))
+  Reader.Default("paymentBankName-2", Reader.GetCustomer("cp.wire-bank-name2"))
+  Reader.Default("paymentBankName-3", Reader.GetCustomer("cp.wire-bank-name3"))
+  Reader.Default("paymentBankName-4", Reader.GetCustomer("cp.wire-bank-name4"))
+
+  Reader.Default("paymentBankBIC-1", Reader.GetCustomer("cp.wire-bank-swift1"))
+  Reader.Default("paymentBankBIC-2", Reader.GetCustomer("cp.wire-bank-swift2"))
+  Reader.Default("paymentBankBIC-3", Reader.GetCustomer("cp.wire-bank-swift3"))
+  Reader.Default("paymentBankBIC-4", Reader.GetCustomer("cp.wire-bank-swift4"))
+
+  Reader.Default("paymentBankAccountNo-1", Reader.GetCustomer("cp.enc_wire-bank-accountno1"))
+  Reader.Default("paymentBankAccountNo-2", Reader.GetCustomer("cp.enc_wire-bank-accountno2"))
+  Reader.Default("paymentBankAccountNo-3", Reader.GetCustomer("cp.enc_wire-bank-accountno3"))
+  Reader.Default("paymentBankAccountNo-4", Reader.GetCustomer("cp.enc_wire-bank-accountno4"))
+
+  Reader.Default("lnegobank", "NEGOTIATING BANK")
+  temp = Reader.Get("NegotBank", nothing)
+  temp1 = temp.split("\n")
+  if not IsNullOrEmpty(temp):
+      Reader.Set("negotiatingbank", temp)
+      Reader.Set("negotname", temp1[0])
+#       clear all three address field before populating with current data
+      Reader.Set("negotaddress-1", "")
+      Reader.Set("negotaddress-2", "")
+      Reader.Set("negotaddress-3", "")
+      x = 0
+      for val in temp1:
+##          Skip over first list entry - this is the name field
+          if x > 0 : 
+              Reader.Default("negotaddress-" + str(x), val)
+          x += 1
+
+  Reader.Default("lcollectingbank", "ISSUING BANK/COLLECTING BANK")
+  temp = Reader.Get("51a", nothing)
+  temp1 = temp.split("\n")
+  if not IsNullOrEmpty(temp):
+      Reader.Set("collectingbank", temp)
+      Reader.Set("collectingbankcover", temp)
+      Reader.Set("collectingbankname", temp1[0])
+#       clear all three address field before populating with current data
+      Reader.Set("collectingbankaddress-1", "")
+      Reader.Set("collectingbankaddress-2", "")
+      Reader.Set("collectingbankaddress-3", "")
+      x = 0
+      for val in temp1:
+##          Skip over first list entry - this is the name field
+          if x > 0 : 
+              Reader.Default("collectingbankaddress-" + str(x), val)
+          x += 1
+
+
+  Reader.Default("lapplicantdrawee", "APPLICANT / DRAWEE")
+  temp = Reader.Get("50", nothing)
+  temp1 = temp.split("\n")
+  if not IsNullOrEmpty(temp):
+      Reader.Set("applicantcover", temp)
+      Reader.Set("applicantname", temp1[0])
+#       clear all three address field before populating with current data
+      Reader.Set("applicantaddress-1", "")
+      Reader.Set("applicantaddress-2", "")
+      Reader.Set("applicantaddress-3", "")
+      x = 0
+      for val in temp1:
+##          Skip over first list entry - this is the name field
+          if x > 0 : 
+              Reader.Default("applicantaddress-" + str(x), val)
+          x += 1
+      Reader.Default("applicantcountry", Reader.Get("50country", nothing))
+
+  Reader.Default("lbeneficiarydrawer", "BENEFICIARY / DRAWER")
+  temp = Reader.Get("59", nothing)
+  temp1 = temp.split("\n")
+  if not IsNullOrEmpty(temp):
+      Reader.Set("beneficiarycover", temp)
+      Reader.Set("beneficiaryname", temp1[0])
+ #       clear all three address field before populating with current data
+      Reader.Set("beneficiaryaddress-1", "")
+      Reader.Set("beneficiaryaddress-2", "")
+      Reader.Set("beneficiaryaddress-3", "")
+      x = 0
+      for val in temp1:
+##          Skip over first list entry - this is the name field
+          if x > 0 : 
+              Reader.Default("beneficiaryaddress-" + str(x), val)
+          x += 1
+
+  Reader.Default("lpresenter", "PRESENTER CONTACT DETAILS")
+  Reader.Default("presenterName", "Trade Technologies, Inc.")
+  Reader.Default("presenterAddressLine1", "106 E. 6th Street #900-103")
+  Reader.Default("presenterAddressLine2", "")
+  Reader.Default("presenterAddressLine3", "Austin, TX 78701")
+  Reader.Default("presenterCountry", "USA")
+
+
+  Reader.Default("lname", "NAME:")
+  Reader.Default("laddress-1", "ADDRESS 1:")
+  Reader.Default("laddress-2", "ADDRESS 2:")
+  Reader.Default("laddress-3", "ADDRESS 3:")
+  Reader.Default("lcountry", "COUNTRY:")
+  Reader.Default("lcollectingbankBIC", "BIC NO:")
+
+
+
+  contactemail =  Reader.Get("dl.contactemail", nothing)
+  contactperson = Reader.Get("dl.docpreparer", nothing)
+  if not IsNullOrEmpty(contactemail) :
+      Reader.Default("beneficiarycontact", contactperson + ", " + contactemail)
+  else:
+      Reader.Default("beneficiarycontact", contactperson)
+  Reader.Default("lbeneficiarycontact", "IN CASE OF QUERIES, PLEASE CONTACT:")
+
+
+  Reader.Default("lAgree", "We agree to be bound by the Terms and Conditions set out in the overleaf of this Application")
+
+  Reader.Default("lspecialinstructions", "SPECIAL INSTRUCTIONS")
+
+
+  Reader.Default("ldraftno", "DRAFT NUMBER")
+  Reader.Default("draftno", Reader.Get("invoicenumber", nothing))
+  Reader.Default("lbankreference", "ADVISING BANK REF")
+  Reader.Default("bankreference", Reader.Get("AdvNumber", nothing))
+
+  Reader.Default("lcombotenordescription", "TENOR DESCRIPTION")
+  Reader.Default("lmixedtenordetails", "MIXED TENOR DETAILS")
+  Reader.Default("lothertenordescription", "OTHER TENOR EVENT TYPE")
+  Reader.Default("numberofdays", Reader.Get("numberofdays", nothing))
+  Reader.Default("lmaturitydate", "MATURITY DATE")
+  Reader.Default("lmaturitydatedraft", "MATURITY DATE ON DRAFT")
+  Reader.Default("maturitydate", Reader.Get("datematurity", nothing))
+  Reader.Default("covermaturitydate", Reader.Get("datematurity", nothing))
+  Reader.Default("draftmaturitydate", Reader.Get("datematurity", nothing))
+  Reader.Default("lcombodocsagainst", "DOCUMENT AGAINST")
+  Reader.Default("lcombofinance", "FINANCE")
+  Reader.Default("lcomboavalization", "AVALIZATION")
+  Reader.Default("ltenorDays", "NUMBER OF DAYS")
+
+  Reader.Default("lcomboourChargesOn", "ALL YOUR CHARGES ARE FOR THE ACCOUNT OF")
+  Reader.Default("lcombooverseasBankChargesOn", "COLLECTING BANK CHARGES FOR THE ACCOUNT OF")
+  Reader.Default("lcomboacceptanceMayBedeferredUntilArrivalOfVessel", "ACCEPTANCE/PAYMENT DEFERRED UNTIL ARRIVAL OF VESSEL")
+  Reader.Default("lcombocableAdviceForNon", "CABLE ADVICE FOR NON")
+  Reader.Default("lcombocableAdviceFor", "CABLE ADVICE FOR")
+  Reader.Default("lcomboProtestFor", "PROTEST FOR")
+  Reader.Default("lcomboProtestForNon", "PROTEST FOR NON")
+  Reader.Default("lcombowaiveinterest", "WAIVE INTEREST")
+  Reader.Default("lcomboourChargesWaive", "COLLECTING BANK CHARGES WAIVE")
+
+  Reader.Default("lFeeOurAccount", "FEES AND CHARGES ARE FOR OUR ACCOUNT IF THE SAME ARE NOT PAID BY THE DRAWEE")
+  Reader.Default("lForwardDocuments", "FORWARD DOCUMENTS TO YOUR BRANCH OR CORRESPONDENT UNLESS OTHERWISE INSTRUCTED")
+  Reader.Default("lCollectInterest", "COLLECT INTEREST AT                 %  FROM THE DATE OF                            TO")
+
+
+  Reader.Default("lRestSettlementInstructions", "Click to clear Payment Instructions")
+  Reader.Default("lSettlementInstructions1", "CREDIT NET PROCEEDS TO OUR ACCOUNT NO.") 
+  Reader.Default("lSettlementInstructions2", "AND DEDUCT")
+  Reader.Default("lSettlementInstructions3", "IN SETTLEMENT OF YOUR IMPORT BILL NO.")
+  Reader.Default("lSettlementInstructions4", "CREDIT NET PROCEEDS TO OUR ACCOUNT NO.")
+  Reader.Default("lSettlementInstructions5", "ARRANGE WIRE TRANSFER OF NET PROCEEDS TO")
+  Reader.Default("lSettlementInstructions6", "REMIT PROCEEDS TO OUR ACCOUNT NO.")
+
+  Reader.Default("lb2bcreditnumber", "BACK TO BACK CREDIT NO")
+  Reader.Default("lDeductCharges", "DEDUCT ALL YOUR CHARGES FROM THE L/C PROCEEDS")
+
+## STAMPS
+  Reader.Default("istampendorsed", "istampendorsed")
+  Reader.Default("iraisedcommercestamp", "iraisedcommercestamp")
+  Reader.Default("iraisednotarystamp", "iraisednotarystamp")
+  Reader.Default("transmitfax", "transmitfax")
+  Reader.Default("isstampsigned", "isstampsigned")
+  Reader.Default("ismanuallyendorsed", "ismanuallyendorsed")
+
+  Reader.Default("headerbankcover-1", "BANK COVER DETAILS")
+  Reader.Default("headerbankcover-2", "COLLECTION INSTRUCTIONS")
+  Reader.Default("headerbankcover-3", "PAYMENT INSTRUCTIONS")
+  Reader.Default("headerbankcover-4", "DOCUMENTARY CREDIT (L/C)")
+  Reader.Default("headerbankcover-5", "COLLECTION (D/P OR D/A)")
+
+
+
+  Reader.Default("lcbexamineDocuments", "NEGOTIATE THE DOCUMENTS UNDER THE L/C")
+  Reader.Default("lcbnegpurchaseprepay", "FOR NEGOTIATION/PURCHASE/PREPAYMENT/ADVANCE AS UNDER THE L/C")
+  Reader.Default("lcbnegpurchaseprepayafteracceptance", "AFTER ACCEPTANCE BY THE ISSUING BANK")
+  Reader.Default("lcbnegpurchaseprepaycomplypresentation", "DOCUMENTS PRESENTED CONSTITUTE COMPLYING PRESENTATION")
+  Reader.Default("lcbsendDocumentsnofinancing", "PLEASE SEND THE DOCUMENTS FOR PAYMENT / ACCEPTANCE WITHOUT FINANCING")
+  Reader.Default("lcbsendDocumentsnofinancingwithChecking", "WITH")
+  Reader.Default("lcbsendDocumentsnofinancingNoChecking", "WITHOUT YOUR CHECKING OF DOCUMENTS")
+  Reader.Default("lcbsendonApproval", "SEND DOCUMENTS ON APPROVAL")
+  Reader.Default("lcombodraftspresented", "DRAFTS PRESENTED")
+  Reader.Default("lcombotranslation", "TRANSLATION, IF ANY PROVIDED")
+
+  Reader.Default("lcbfinanceUnder", "FINANCING UNDER")
+  Reader.Default("lcbfinanceUnderDP", "D/P")
+  Reader.Default("lcbfinanceUnderDA", "D/A")
+  Reader.Default("lcbpaymentUnder", "PAYMENT UNDER")
+  Reader.Default("lcbpaymentUnderDP", "D/P")
+  Reader.Default("lcbpaymentUnderDA", "D/A")
+
+
+
+
+
+  ttlogistics.SetDefaultDateLabels(Reader)
+  ttlogistics.SetDefaultWorkflowLabels(Reader)
+
+  draw = DocContext.Draw
+  Reader.Default("header-customername3", "Account: " + draw.ClientName + ", Transaction: " + str(draw.TransactionName) + ",  Draw: " + str(draw.DrawNumber))
+
+
+
+
+
+
+]]></Script>
+</TemplateDescriptor>

@@ -1,0 +1,15 @@
+D:\Repos\DotNetPractice\02-CountingChars\bin\Debug\net8.0\02-CountingChars.exe
+D:\Repos\DotNetPractice\02-CountingChars\bin\Debug\net8.0\02-CountingChars.deps.json
+D:\Repos\DotNetPractice\02-CountingChars\bin\Debug\net8.0\02-CountingChars.runtimeconfig.json
+D:\Repos\DotNetPractice\02-CountingChars\bin\Debug\net8.0\02-CountingChars.dll
+D:\Repos\DotNetPractice\02-CountingChars\bin\Debug\net8.0\02-CountingChars.pdb
+D:\Repos\DotNetPractice\02-CountingChars\obj\Debug\net8.0\02-CountingChars.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\DotNetPractice\02-CountingChars\obj\Debug\net8.0\02-CountingChars.AssemblyInfoInputs.cache
+D:\Repos\DotNetPractice\02-CountingChars\obj\Debug\net8.0\02-CountingChars.AssemblyInfo.cs
+D:\Repos\DotNetPractice\02-CountingChars\obj\Debug\net8.0\02-CountingChars.csproj.CoreCompileInputs.cache
+D:\Repos\DotNetPractice\02-CountingChars\obj\Debug\net8.0\02-CountingChars.sourcelink.json
+D:\Repos\DotNetPractice\02-CountingChars\obj\Debug\net8.0\02-CountingChars.dll
+D:\Repos\DotNetPractice\02-CountingChars\obj\Debug\net8.0\refint\02-CountingChars.dll
+D:\Repos\DotNetPractice\02-CountingChars\obj\Debug\net8.0\02-CountingChars.pdb
+D:\Repos\DotNetPractice\02-CountingChars\obj\Debug\net8.0\02-CountingChars.genruntimeconfig.cache
+D:\Repos\DotNetPractice\02-CountingChars\obj\Debug\net8.0\ref\02-CountingChars.dll

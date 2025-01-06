@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Repos\\DotNetPractice\\FieldExtractor\\",
+  "WorkspaceRootPath": "C:\\Repos\\DotNetPractice\\FieldExtractor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{96A6FED5-E03D-4F65-BF97-B9059C3947F9}|FieldExtractor\\FieldExtractor.csproj|d:\\repos\\dotnetpractice\\fieldextractor\\fieldextractor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{96A6FED5-E03D-4F65-BF97-B9059C3947F9}|FieldExtractor\\FieldExtractor.csproj|c:\\repos\\dotnetpractice\\fieldextractor\\fieldextractor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{96A6FED5-E03D-4F65-BF97-B9059C3947F9}|FieldExtractor\\FieldExtractor.csproj|solutionrelative:fieldextractor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,9 +20,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Repos\\DotNetPractice\\FieldExtractor\\FieldExtractor\\Program.cs",
+              "DocumentMoniker": "C:\\Repos\\DotNetPractice\\FieldExtractor\\FieldExtractor\\Program.cs",
               "RelativeDocumentMoniker": "FieldExtractor\\Program.cs",
-              "ToolTip": "D:\\Repos\\DotNetPractice\\FieldExtractor\\FieldExtractor\\Program.cs",
+              "ToolTip": "C:\\Repos\\DotNetPractice\\FieldExtractor\\FieldExtractor\\Program.cs",
               "RelativeToolTip": "FieldExtractor\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Repos\\DotNetPractice\\FieldExtractor\\FieldExtractor\\FieldExtractor.csproj": {}
+    "C:\\Repos\\DotNetPractice\\FieldExtractor\\FieldExtractor\\FieldExtractor.csproj": {}
   },
   "projects": {
-    "D:\\Repos\\DotNetPractice\\FieldExtractor\\FieldExtractor\\FieldExtractor.csproj": {
+    "C:\\Repos\\DotNetPractice\\FieldExtractor\\FieldExtractor\\FieldExtractor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Repos\\DotNetPractice\\FieldExtractor\\FieldExtractor\\FieldExtractor.csproj",
+        "projectUniqueName": "C:\\Repos\\DotNetPractice\\FieldExtractor\\FieldExtractor\\FieldExtractor.csproj",
         "projectName": "FieldExtractor",
-        "projectPath": "D:\\Repos\\DotNetPractice\\FieldExtractor\\FieldExtractor\\FieldExtractor.csproj",
+        "projectPath": "C:\\Repos\\DotNetPractice\\FieldExtractor\\FieldExtractor\\FieldExtractor.csproj",
         "packagesPath": "C:\\Users\\icaps\\.nuget\\packages\\",
-        "outputPath": "D:\\Repos\\DotNetPractice\\FieldExtractor\\FieldExtractor\\obj\\",
+        "outputPath": "C:\\Repos\\DotNetPractice\\FieldExtractor\\FieldExtractor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -25,10 +25,10 @@
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "E:\\Dev.Repository\\ddm\\packages": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "E:\\Nuget.Packages\\DDM\\packages": {},
+          "E:\\ddm\\packages": {},
+          "https://pkgmgr.internal.tradetechnologies.com/nuget": {}
         },
         "frameworks": {
           "net8.0": {
@@ -45,7 +45,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -66,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

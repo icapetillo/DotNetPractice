@@ -1,0 +1,15 @@
+D:\Repos\DotNetPractice\FieldExtractor\FieldExtractor\bin\Release\net8.0\FieldExtractor.exe
+D:\Repos\DotNetPractice\FieldExtractor\FieldExtractor\bin\Release\net8.0\FieldExtractor.deps.json
+D:\Repos\DotNetPractice\FieldExtractor\FieldExtractor\bin\Release\net8.0\FieldExtractor.runtimeconfig.json
+D:\Repos\DotNetPractice\FieldExtractor\FieldExtractor\bin\Release\net8.0\FieldExtractor.dll
+D:\Repos\DotNetPractice\FieldExtractor\FieldExtractor\bin\Release\net8.0\FieldExtractor.pdb
+D:\Repos\DotNetPractice\FieldExtractor\FieldExtractor\obj\Release\net8.0\FieldExtractor.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\DotNetPractice\FieldExtractor\FieldExtractor\obj\Release\net8.0\FieldExtractor.AssemblyInfoInputs.cache
+D:\Repos\DotNetPractice\FieldExtractor\FieldExtractor\obj\Release\net8.0\FieldExtractor.AssemblyInfo.cs
+D:\Repos\DotNetPractice\FieldExtractor\FieldExtractor\obj\Release\net8.0\FieldExtractor.csproj.CoreCompileInputs.cache
+D:\Repos\DotNetPractice\FieldExtractor\FieldExtractor\obj\Release\net8.0\FieldExtractor.sourcelink.json
+D:\Repos\DotNetPractice\FieldExtractor\FieldExtractor\obj\Release\net8.0\FieldExtractor.dll
+D:\Repos\DotNetPractice\FieldExtractor\FieldExtractor\obj\Release\net8.0\refint\FieldExtractor.dll
+D:\Repos\DotNetPractice\FieldExtractor\FieldExtractor\obj\Release\net8.0\FieldExtractor.pdb
+D:\Repos\DotNetPractice\FieldExtractor\FieldExtractor\obj\Release\net8.0\FieldExtractor.genruntimeconfig.cache
+D:\Repos\DotNetPractice\FieldExtractor\FieldExtractor\obj\Release\net8.0\ref\FieldExtractor.dll

@@ -1,0 +1,817 @@
+PDF Field,DB Field
+expshipdate,expshipdate
+cargoreceiveddate,dl.cargoreceiveddate
+dprreceived,dllocal.dprreceived
+earliestshipdate,dllocal.earliestshipdate
+workabilitydatesent,dllocal.workabilitydatesent
+dateforward,dateforward
+sidate,sidate
+proofcopyrecvd,dl.proofcopyrecvd
+releasedtransportdocdate,dllocal.releasedtransportdocdate
+transportdocdate,transportdocdate
+thirdpartydocreceiveddate,dllocal.thirdpartydocreceiveddate
+onboarddate,onboarddate
+onboarddate-docs,dl.onboarddate-docs
+blmonth,dl.blmonth
+blday,dl.blday
+blyear,dl.blyear
+issuedby,dl.issuedby,51a
+invoicenumber,invoicenumber
+draftno,cover.draftno
+invoicedate,invoicedate
+invoicedates,invoicedates
+invoiceamount,invoiceamount
+currencycode,32bc
+firstadvicedate,dllocal.firstadvicedate
+secondadvicedate,dllocal.secondadvicedate
+estlatestpresentation,dllocal.estlatestpresentation
+ntedays,dllocal.ntedays
+rbntedate,dllocal.rbntedate
+FACmilestone,dllocal.FACmilestone
+facnoofdays,dllocal.facnoofdays
+cbFACnoofdays,dllocal.cbFACnoofdays
+expecteddrawdate,dllocal.expecteddrawdate
+cbextraday,dllocal.cbextraday
+FACpercentofinvoice,dllocal.FACpercentofinvoice
+inlandrouting,dllocal.inlandrouting
+pinvoicedate,dl.pinvoicedate
+pinvoicenumber,dl.pinvoicenumber
+pinvoiceamount,dl.pinvoiceamount
+draftpayee,dl.draftpayee
+draftamount,draft.amount
+draftamount1,draft-first.amount
+draftamount2,draft-second.amount
+draftamount3,draft-third.amount
+draftpercent1,dl.draftpercent1
+draftpercent2,dl.draftpercent2
+draftpercent3,dl.draftpercent3
+lflowinvoicedate,dl.lflowinvoicedate
+loverridedraftcalculation,dl.loverridedraftcalculation
+draftdate,dl.draftdate
+draftplaceofissue,dl.draftplaceofissue
+incoterms,dl.incoterms,ShipTerms
+paymentterms1,draft-first.tenor,42c
+paymentterms2,draft-second.tenor
+paymentterms3,draft-third.tenor
+rbdraft1,dl.rbdraft1
+rbdraft2,dl.rbdraft2
+rbdraft3,dl.rbdraft3
+draftclause,dl.draftclause
+combotenorType,dl.combotenorType
+tenorType,dl.tenorType
+loverridedraftclause,dl.loverridedraftclause
+overridedraftclause,dl.overridedraftclause
+cbcleardraftclause,dllocal.cbcleardraftclause
+cbaddlcdoc,dl.cbaddlcdoc
+paymentinstructions,dl.paymentinstructions
+paymentBankName,cover.paymentBankName
+paymentBankBIC,cover.paymentBankBIC
+paymentBankAccountNo,cover.paymentBankAccountNo
+rbbank,dl.rbbank
+negotiatingbank,NegotBank,cover.negotiatingbank
+currencypaytrade,dl.currencypaytrade
+cbpaytrade,dl.cbpaytrade
+tradebank,dl.tradebank
+paytradeamount,dl.paytradeamount
+comboboxpaytobank,dl.comboboxpaytobank
+buyerreference,buyerreference
+contractno,contractno
+refno,dllocal.refno
+refno2,dllocal.refno2
+refno3,dllocal.refno3
+refno4,InternalReference
+rbpresenterreference,dl.rbpresenterreference
+presenterReference,cover.presenterReference
+presenterName,cover.presenterName
+presenterAddressLine1,cover.presenterAddressLine1
+presenterAddressLine2,cover.presenterAddressLine2
+presenterAddressLine3,cover.presenterAddressLine3
+presenterCountry,cover.presenterCountry
+miscint1,dllocal.miscint1
+finalacceptance,dl.finalacceptance
+finalacceptance90,dl.finalacceptance90
+finalacceptance120,dl.finalacceptance120
+finalacceptanceother,dl.finalacceptanceother
+finalacceptancedays,dl.finalacceptancedays
+shortdescription,dl.shortdescription,45a
+fulldescription,dl.fulldescription,45a
+lcopydescription,dl.lcopydescription
+cbpartialshipment,dl.cbpartialshipment
+beneficiaryname,dl.beneficiaryname,OrderOf
+transportdocshipper,dl.transportdocshipper,59
+endorsement,dl.endorsement
+endorsementinsurance,dl.endorsementinsurance
+insurancepct,dl.insurancepct
+flowendorsetransportdoc,dl.flowendorsetransportdoc
+flowendorseinsurance,dl.flowendorseinsurance
+flowinsurancedoctitle,dl.flowinsurancedoctitle
+placeofissue,dl.placeofissue
+forwardername,dl.forwardername
+forwarder,Forwarder
+forwarderref,forwarderref
+consignee,dl.consignee
+consigneeawb,dl.consigneeawb
+rb2,dl.rb2
+alternatesoldto,dl.alternatesoldto
+notify,dl.notify
+notifyawb,dl.notifyawb
+freightprepaid,dl.freightprepaid
+freightcollect,dl.freightcollect
+checkboxfpp,dl.checkboxfpp
+checkboxfcol,dl.checkboxfcol
+rb1,dl.rb1
+cbdate,dl.cbdate
+cb1,dl.cb1
+cbaircarrier,dl.cbaircarrier
+cbffshipper,dl.cbffshipper
+iatacode,dl.iatacode
+toord,dl.toord
+bybom1,dl.bybom1
+tobom1,dl.tobom1
+tobom2,dl.tobom2
+bybom2,dl.bybom2
+currency,dl.currencycode
+insuranceamount,dl.insuranceamount
+rate,dl.rate
+rate2,dl.rate2
+chargeableweight,dl.chargeableweight
+chcode,dl.chcode
+wtval,dl.wtval
+declaredvaluecarriage,dl.declaredvaluecarriage
+declaredvaluecustoms,dl.declaredvaluecustoms
+hawb,masterbl.hawb
+mawb,masterbl.mawb
+flightno,dl.flightno
+flightdate1,dl.flightdate1
+flightnodate1,dl.flightnodate1
+flightno2,dl.flightno2
+flightdate2,dl.flightdate2
+flightnodate2,dl.flightnodate2
+flightno3,dl.flightno3
+flightdate3,dl.flightdate3
+flightnodate3,dl.flightnodate3
+flightno4,dl.flightno4
+flightdate4,dl.flightdate4
+flightnodate4,dl.flightnodate4
+carrier,dl.carrier
+bookingnumber,bookingnumber
+blnumber,blnumber
+bltrackingnumber1,dl.bltrackingnumber1
+bltrackingnumber2,dl.bltrackingnumber2
+cbvessel,dl.cbvessel
+vessel,vessel
+voyage,dl.voyage
+iMONumber,cover.iMONumber
+combotransportmode,dl.combotransportmode
+transportMode,cover.transportMode
+oceancarrier,dl.oceancarrier
+loaded,dl.loaded
+loadedat,dl.loadedat
+loadedon,dl.loadedon
+onboardstatement,dl.onboardstatement
+onboardstatementcustom,dl.onboardstatementcustom
+cb2,dl.cb2
+ein,dl.ein
+lei,dl.lei
+sed,dl.sed
+cb3,dl.cb3
+cb4,dl.cb4
+lcombinedata,dl.lcombinedata
+comboshipment,dl.comboshipment
+lbeneficiaryvatid,dl.lbeneficiaryvatid
+beneficiaryvatid,dl.beneficiaryvatid
+shipmenttext,dl.shipmenttext
+placeofreceipt,dl.placeofreceipt,44a
+loadingport,dl.loadingport,44e,44a
+dischargeport,dl.dischargeport,44f,44b
+bookingdischargeport,dllocal.bookingdischargeport
+finaldestination,dl.finaldestination,44b
+dimensions,dl.dimensions
+packageweight,dl.packageweight
+packagenetweight,dl.packagenetweight
+quantity,dl.quantity
+lcquantity,dl.lcquantity
+packagecount,dl.packagecount
+packageunits,dl.packageunits
+packagecounttext,dl.packagecounttext
+ponumber,dl.ponumber
+podate,dl.podate
+shipmenteta,dl.shipmenteta
+arrivaldate,dl.arrivaldate
+countryoforigin,dl.countryoforigin
+marksnumbers,dl.marksnumbers
+forwarderfee,ForwarderFee
+dcarrier,DomestCarrier
+dcarrierfee,DomestCarrierFee
+icarrier,IntlCarrier
+icarrierfee,IntlCarrierFee
+ins,Insurer
+insfee,InsuranceFee
+inspect,Inspector
+inspectfee,InspectionFee
+remarks,remarks
+rbdate,dl.rbdate
+docpreparer,dl.docpreparer
+combo1,dl.combo1
+docprepareremail,dl.docprepareremail
+combocontactemail,dl.combocontactemail
+contactemail,dl.contactemail
+contactoffice,dl.contactoffice
+officelocation,dl.officelocation
+officecityst,dl.officecityst
+officeaddress,dl.officeaddress
+officefax,dl.officefax
+subPO-1,dllocal.subPO-1
+coocountryoforigintext1,dl.coocountryoforigintext1
+coocountryoforigintext2,dl.coocountryoforigintext2
+coocountryoforigin,dl.coocountryoforigin
+coocountryoforigintext,dl.coocountryoforigintext
+cbcooinvoice,dl.cbcooinvoice
+stamptext,dl.stamptext,OrderOf
+cbstampinv,dllocal.cbstampinv
+cbstamppl,dllocal.cbstamppl
+cbstampchamberdoc,dllocal.cbstampchamberdoc
+cbstampotherdocs,dllocal.cbstampotherdocs
+cbstamptransportdocs,dllocal.cbstamptransportdocs
+stampfwdrtext,dl.stampfwdrtext,dl.forwardername
+cbstampawb,dllocal.cbstampawb
+cbstampbl,dllocal.cbstampbl
+cbstampfcr,dllocal.cbstampfcr
+cbstampcarriercert,dllocal.cbstampcarriercert
+logotext1,dl.logotext1
+logotext2,dl.logotext2
+filestoragereference,dllocal.filestoragereference
+cbqtytoinvoice,dl.cbqtytoinvoice
+cbpctoinvoice,dl.cbpctoinvoice
+cbpgwtoinvoice,dl.cbpgwtoinvoice
+cbpnwtoinvoice,dl.cbpnwtoinvoice
+cbdimtoinvoice,dl.cbdimtoinvoice
+cbsmtoinvoice,dl.cbsmtoinvoice
+cbqtytopackinglist,dl.cbqtytopackinglist
+cbpctopackinglist,dl.cbpctopackinglist
+cbpgwtopackinglist,dl.cbpgwtopackinglist
+cbpnwtopackinglist,dl.cbpnwtopackinglist
+cbdimtopackinglist,dl.cbdimtopackinglist
+cbsmtopackinglist,dl.cbsmtopackinglist
+cbqtytocoo,dl.cbqtytocoo
+cbpctocoo,dl.cbpctocoo
+cbpgwtocoo,dl.cbpgwtocoo
+cbpnwtocoo,dl.cbpnwtocoo
+cbdimtocoo,dl.cbdimtocoo
+cbsmtocoo,dl.cbsmtocoo
+cbqtytocert,dl.cbqtytocert
+cbpctocert,dl.cbpctocert
+cbpgwtocert,dl.cbpgwtocert
+cbpnwtocert,dl.cbpnwtocert
+cbdimtocert,dl.cbdimtocert
+cbsmtocert,dl.cbsmtocert
+lonboarddate,dl.lonboarddate
+llpd,dl.llpd
+lflowinvno,dl.lflowinvno
+llcno,dl.llcno
+lflowlcdateissued,dl.lflowlcdateissued
+llcdateissued,dl.llcdateissued
+lflowlissuedby,dl.lflowlissuedby
+lissuedby,dl.lissuedby
+lflowissuedby,dl.lflowissuedby
+linvoicenumber,dl.linvoicenumber
+linvoiceamount,dl.linvoiceamount
+lpinvoicenumber,dl.lpinvoicenumber
+lbuyerreference,dl.lbuyerreference
+lflowbuyerreference,dl.lflowbuyerreference
+lcontractno,dl.lcontractno
+lflowcontractno,dl.lflowcontractno
+lrefno,dl.lrefno
+lflowrefno,dl.lflowrefno
+lrefno2,dl.lrefno2
+lflowrefno2,dl.lflowrefno2
+lrefno3,dl.lrefno3
+lrefno4,dl.lrefno4
+lmiscint1,dl.lmiscint1
+proceedsRcvd,dllocal.proceedsRcvd
+prcRcvdInvAmtCcy,dllocal.prcRcvdInvAmtCcy
+prcRcvdInvAmt,dllocal.prcRcvdInvAmt
+prcRcvdAdvAmtCcy,dllocal.prcRcvdAdvAmtCcy
+prcRcvdAdvAmt,dllocal.prcRcvdAdvAmt
+principalCreditAccNum,dllocal.principalCreditAccNum
+lflowshortdesc,dl.lflowshortdesc
+lshortdescription,dl.lshortdescription
+lfulldescription,dl.lfulldescription
+lbeneficiaryname,dl.lbeneficiaryname
+lalternatesoldto,dl.lalternatesoldto
+lconsignee,dl.lconsignee
+lnotify,dl.lnotify
+lhawb,dl.lhawb
+lmawb,dl.lmawb
+lflightno,dl.lflightno
+flightnumbers,dllocal.flightnumbers
+lcarrier,dl.lcarrier
+lbookingnumber,dl.lbookingnumber
+lblnumber,dl.lblnumber
+lvessel,dl.lvessel
+liMONumber,cover.liMONumber
+ltransportMode,cover.ltransportMode
+loceancarrier,dl.loceancarrier
+lein,dl.lein
+llei,dl.llei
+lsed,dl.lsed
+lplaceofreceipt,dl.lplaceofreceipt
+lloadingport,dl.lloadingport
+ldischargeport,dl.ldischargeport
+lfinaldestination,dl.lfinaldestination
+airportofloading,cover.airportofloading
+airportofdischarge,cover.airportofdischarge
+vesselportofloading,cover.vesselportofloading
+vesselportofdischarge,cover.vesselportofdischarge
+shipfrom,cover.shipfrom
+shipto,cover.shipto
+bargeportofloading,cover.bargeportofloading
+bargeportofdischarge,cover.bargeportofdischarge
+railportofloading,cover.railportofloading
+railportofdischarge,cover.railportofdischarge
+ldimensions,dl.ldimensions
+lpackageweight,dl.lpackageweight
+lpackagenetweight,dl.lpackagenetweight
+lquantity,dl.lquantity
+llcquantity,dl.llcquantity
+lpackagecount,dl.lpackagecount
+lponumber,dl.lponumber
+lpodate,dl.lpodate
+larrivaldate,dl.larrivaldate
+lmarksnumbers,dl.lmarksnumbers
+lflowmarks,dl.lflowmarks
+lflowmarksdraft,dl.lflowmarksdraft
+factoryname,factoryname
+miscdate1,dllocal.miscdate1
+miscdate2,dllocal.miscdate2
+miscdate3,dllocal.miscdate3
+miscdate4,dllocal.miscdate4
+note1,dplocal.note1
+comborefno5,dllocal.comborefno5
+refno5,dllocal.ref1
+refno6,dllocal.ref2
+refno7,dllocal.ref3
+refno8,dllocal.ref4
+31ddate,31ddate
+48days,48days
+lird,dllocal.lird, lird
+44cs,44cs
+50country,50country
+advisingno,AdvNumber
+cbConfigurationFile,dllocal.cbConfigurationFile
+waitingdate,.waitingdate
+waitingnote,.waitingnote
+docprep,.docprep
+cbtodo1-,.cbtodo1-
+todo1-,.todo1-
+tododate1-,.tododate1-
+negotiatingbankcover,cover.negotiatingbankcover,NegotBank
+negotname,cover.negotname
+negotaddress-1,cover.negotaddress-1
+negotaddress-2,cover.negotaddress-2
+negotaddress-3,cover.negotaddress-3
+negotbankcountry,cover.negotbankcountry
+collectingbankcover,cover.collectingbankcover,51a
+collectingbank,51a
+collectingbankname,cover.issuebank
+collectingbankaddress-1,cover.collectingbankaddress-1
+collectingbankaddress-2,cover.collectingbankaddress-2
+collectingbankaddress-3,cover.collectingbankaddress-3
+issuebankcountry,cover.issuebankcountry
+collectingbankBIC,cover.collectingbankBIC
+applicantcover,cover.applicantcover,50
+applicant,50
+applicantname,cover.applicantname
+applicantaddress-1,cover.applicantaddress-1
+applicantaddress-2,cover.applicantaddress-2
+applicantaddress-3,cover.applicantaddress-3
+applicantcountry,50country
+beneficiarycover,cover.beneficiarycover,59
+beneficiary,59
+beneficiaryaddress-1,cover.beneficiaryaddress-1
+beneficiaryaddress-2,cover.beneficiaryaddress-2
+beneficiaryaddress-3,cover.beneficiaryaddress-3
+beneficiarycountry,cover.drawercountry
+beneficiarycontact,cover.beneficiarycontact
+specialinstructions,cover.specialinstructions
+b2bcreditnumber,cover.b2bcreditnumber
+cbAgree,cover.cbAgree
+bankreference,AdvNumber
+tenorDays,cover.tenorDays,numberofdays
+numberofdays,numberofdays
+combotenordescription,cover.combotenordescription
+BankSelect,dllocal.BankSelect
+tenorDescription,cover.tenorDescription
+mixedtenordetails,cover.mixedtenordetails
+othertenordescription,cover.othertenordescription
+maturitydate,datematurity
+covermaturitydate,cover.maturitydate
+draftmaturitydate,draft.maturityDate
+combodocsagainst,cover.combodocsagainst
+documentAgainstPayment,cover.documentAgainstPayment
+documentAgainstAcceptance,cover.documentAgainstAcceptance
+freeofPayment,cover.freeofPayment
+discountFinancingInstructions,cover.discountFinancingInstructions
+combofinance,cover.combofinance
+comboavalization,cover.comboavalization
+combodraftspresented,cover.combodraftspresented
+combotranslation,cover.combotranslation
+cbexamineDocuments,cover.cbexamineDocuments
+cbnegpurchaseprepay,cover.cbnegpurchaseprepay
+cbnegpurchaseprepayafteracceptance,cover.cbnegpurchaseprepayafteracceptance
+cbnegpurchaseprepaycomplypresentation,cover.cbnegpurchaseprepaycomplypresentation
+cbsendDocumentsnofinancing,cover.cbsendDocumentsnofinancing
+cbsendDocumentsnofinancingwithChecking,cover.cbsendDocumentsnofinancingwithChecking
+cbsendDocumentsnofinancingNoChecking,cover.cbsendDocumentsnofinancingNoChecking
+cbsendonApproval,cover.cbsendonApproval
+cbfinanceUnder,cover.cbfinanceUnder
+cbfinanceUnderDP,cover.cbfinanceUnderDP
+cbfinanceUnderDA,cover.cbfinanceUnderDA
+cbpaymentUnder,cover.cbpaymentUnder
+cbpaymentUnderDP,cover.cbpaymentUnderDP
+cbpaymentUnderDA,cover.cbpaymentUnderDA
+comboourChargesOn,cover.comboourChargesOn
+ourChargesOn,cover.ourChargesOn
+combooverseasBankChargesOn,cover.combooverseasBankChargesOn
+overseasBankChargesOn,cover.overseasBankChargesOn
+overseasBankChargesWaive,cover.overseasBankChargesWaive
+comboacceptanceMayBedeferredUntilArrivalOfVessel,cover.comboacceptanceMayBedeferredUntilArrivalOfVessel
+acceptanceMayBedeferredUntilArrivalOfVessel,cover.acceptanceMayBedeferredUntilArrivalOfVessel
+combocableAdviceForNon,cover.combocableAdviceForNon
+cableAdviceForNonPayment,cover.cableAdviceForNonPayment
+cableAdviceForNonAcceptance,cover.cableAdviceForNonAcceptance
+combocableAdviceFor,cover.combocableAdviceFor
+comboProtestFor,cover.comboProtestFor
+protestForNonAcceptance,cover.protestForNonAcceptance
+protestForNonPayment,cover.protestForNonPayment
+comboProtestForNon,cover.comboProtestForNon
+doNotProtest,cover.doNotProtest
+combowaiveinterest,cover.combowaiveinterest
+waiveInterest,cover.waiveInterest
+comboourChargesWaive,cover.comboourChargesWaive
+ourChargesWaive,cover.ourChargesWaive
+cbFeeOurAccount,cover.cbFeeOurAccount
+cbForwardDocuments,cover.cbForwardDocuments
+cbCollectInterest,cover.cbCollectInterest
+interestRateinPcT,cover.interestRateinPcT
+interestRateStartDate,cover.interestRateStartDate
+interestRateMaturityDate,cover.interestRateMaturityDate
+rbSettlementInstructions,cover.rbSettlementInstructions
+accountno1,cover.accountno1
+beneficiaryAccountCCYCode,cover.beneficiaryAccountCCYCode
+deductamt,cover.deductamt
+importbill,cover.importbill
+accountno2,cover.accountno2
+intermediarybank,cover.intermediarybank
+accountno3,cover.accountno3
+cbDeductCharges,cover.cbDeductCharges
+wiretransfer,cover.wiretransfer
+beneficiaryAccountNo,cover.beneficiaryAccountNo
+doctitle,[DATA - LOGISTICS]
+header1,Shipment Details
+header2,Packaging Information
+header3,Air Shipments
+header4,Ocean/FCR Shipments
+header5,Customer Document Stamp
+header6,Customer Document Logo
+header7,Shipment Advice Fax - additional details
+header8,Transport Details
+header9,Miscellaneous Data/Fees
+header10,Internal Billing Information
+header12,Certificate of Origin
+header13,Offline Storage Info
+ldocpreparer,DOCUMENT PREPARER
+lcbclearLCData,CLEAR LC DATA
+lcbclearDraftClause,CLEAR DRAFT CLAUSES
+lcontactemail,OFFICE GROUP EMAIL
+lcontactoffice,OFFICE ADDRESS, PHONE, FAX
+ldprreceived,DPR RECEIVED DATE
+learliestshipdate,LC WORKABILITY RECEIVED DATE
+lworkabilitydatesent,LC WORKABILITY SENT DATE
+lfirstadvicedate,FIRST ADVICE DATE
+lsecondadvicedate,SECOND ADVICE DATE
+l20,l20
+lcno,lcno
+LetterOfCreditNumber,LetterOfCreditNumber
+lcdateissued,31cs
+lfinalacceptance,FINAL ACCEPTANCE
+lfinalacceptance90,90 days
+lfinalacceptance120,120 days
+linvoicedate,INVOICE DATE
+lcurrencycode,CURRENCY CODE
+lproformainv,PROFORMA INVOICE
+lpdate,DATE
+lpinvoiceamount,AMOUNT:
+ldraftamount,TOTAL DRAFT AMOUNT
+lblnte,BL
+linvnte,INV
+lothernte,OTHER
+lproceedsRcvd,PROCEEDS RECEIVED
+lprcRcvdInvAmtCcy,PROCEEDS RECEIVED INVOICE AMT CUR
+lprcRcvdInvAmt,PROCEEDS RECEIVED INVOICE AMT
+lprcRcvdAdvAmtCcy,PROCEEDS RECEIVED ADV AMT CUR
+lprcRcvdAdvAmt,PROCEEDS RECEIVED ADV AMT
+lprincipalCreditAccNum,PRINCIPAL CREDIT ACC NUM
+lcleardraftclause,RESET CLAUSE FOR DRAFT
+ldraftclause,CLAUSE FOR DRAFT
+ldraftclause2,CUSTOM CLAUSE FOR DRAFT
+ldraftpayee,DRAFT PAYEE
+lincoterms,INCOTERMS
+ldraftdate,DRAFT DATE
+ltenor1,DRAFT #1 AMOUNT/TENOR
+ltenor2,DRAFT #2 AMOUNT/TENOR
+ltenor3,DRAFT #3 AMOUNT/TENOR
+ltenorType,TENOR TYPE
+ldraftplaceofissue,DRAFT PLACE OF ISSUE
+ldraftpercent,% OF INVOICE
+lbl,BOL
+linv,INV
+lnone,N/A
+lpl,PL
+lcoo,COO
+lcert,CERT
+cbnote,Checkboxes above are for EMEA Simple doc-set only.
+lpresenterReference,PRESENTER REFERENCE
+descnote,If this checkbox is checked, uncheck it if you are editing the Full Description field and need to have the Short Description field adjusted accordingly.
+lpartialshipment,PARTIAL SHIPMENT
+ltransportdocshipper,TRANSPORT DOC SHIPPER
+lendorsetransportdoc,Transport Document Endorsement
+lendorseinsurance,Insurance Document Endorsement
+linsurancedoctitle,Include Document Name on Insurance Document
+lplaceofissue,PLACE OF ISSUE
+lforwardername,FORWARDER NAME
+lforwarder,FORWARDER NAME/ADDRESS
+lforwarderref,FORWARDER REFERENCE
+lbeneficiary,BENEFICIARY
+lapplicant,APPLICANT:
+lconsignee1,TO ORDER OF SHIPPER
+lconsignee2,Issuing Bank
+lconsignee3,Applicant
+lconsignee4,None, Clear Field
+locean,OCEAN SHIPMENTS
+lair,AIR SHIPMENTS
+l50country,COUNTRY:
+liatacode,Agent's IATA Code
+lto,TO
+lby,BY
+lcurrency,TRANSPORT DOCUMENT CURRENCY
+linsuranceamount,Amount of Insurance
+lrate,Rate/Charge
+lrate2,Rate Class/Comm
+lchargeableweight,Chargeable Weight
+lchcode,CHCode
+lwtval,WT/Val Other
+ldeclaredvaluecarriage,Declared Value Carriage
+ldeclaredvaluecustoms,Declared Value Customs
+lflightno2,2ND FLIGHT/DATE FIELD
+lflightno3,3RD FLIGHT/DATE FIELD
+lflightno4,4TH FLIGHT/DATE FIELD
+lflightnumbers,FLIGHT NUMBERS
+ffnamenote,Agent, Carrier, or Ocean Carrier.
+mawbnote,Select for MAWB.
+ffagent,Agent
+ffcarrier,Carrier
+ffshipper,Shipper
+ocarrier,Ocean Carrier
+lonboardstatementtext,ONBOARD STATEMENT TEXT
+lonboardstatement,DEFAULT ONBOARD STATEMENT
+lonboardstatementcustom,CUSTOM ONBOARD STATEMENT
+clearcarrier,No Agent or Carrier
+aircarrier,Air Carrier
+lbltrackingnumber,BL TRACKING NUMBER
+lusshipment,SHIPMENT FROM THE U.S.A.
+lusshipmentnote,For EMEA site, if required, select appropriate statement on page 3.  Otherwise, uncheck this box.
+lbeneficiaryid,BENEFICIARY ID
+finaldestination-note,REMINDER: Update Final Destination, if required.
+linlandrouting,HANDLING INFORMATION
+qtyinvoice,INVOICE
+lcountryoforigin,POINT OF ORIGIN
+linsurancepct,INSURANCE - % OF INVOICE VALUE
+insurancepctnote,Enter value as a decimal.  For example, for 115%, enter 1.15 
+lfactoryname,FACTORY NAME
+lstamptext,CUSTOMER STAMP TEXT
+stampinv,INVOICE
+stamppl,PACKING LIST
+stampchamberdoc,CHAMBER DOCUMENTS
+stampotherdocs,ALL OTHER CUSTOMER DOCUMENTS
+stamptransportdocs,AIR WAYBILLS
+lstampfwdrtext,FREIGHT FORWARDER STAMP TEXT
+stampawb,AWB
+stampbl,BL
+stampfcr,FCR
+stampcarriercert,CARRIER CERTIFICATE
+llogotext,If a logo is required on the invoice document, you may enter logo text in one of the two fields below.   This text will flow to the appropriate field on the invoice document.  Enter text in one field only.  For option 1, the globe image must be selected on the signature tab in the presentation step.
+option1,Option 1 (autosize font):
+option2,Option 2 (font size 22):
+lfilestoragereference,FILE STORAGE REF #
+lforwarderfee,FORWARDER FEE
+ldcarrier,DOMESTIC CARRIER
+ldcarrierfee,DOMESTIC CARRIAGE FEE
+licarrier,INTERNATIONAL CARRIER
+licarrierfee,INTERNATIONAL CARRIAGE FEE
+lins,INSURANCE
+linsfee,INSURANCE FEE
+linspect,INSPECTOR
+linspectfee,INSPECTION FEE
+dateformat-us,mm/dd/yyyy
+dateformat-uk,dd-mmm-yyyy
+lcreditamount,CREDIT/CONTRACT AMOUNT
+lcreditbalance,CURRENT BALANCE
+lcreditbalanceplus,TOLERANCE AMT +
+lcreditbalanceminus,-
+lsubPO-1,Customer PO#
+creditamount,creditamount
+creditbalance,creditbalance
+creditbalanceplus,creditbalanceplus
+creditbalanceminus,creditbalanceminus
+lbanknickname,BANK NICKNAME
+laddlcdoc,ADD 'ORIGINAL LC ATTACHED' to BANK COVER DOC LIST
+lpaymentinstructions,PAYMENT INSTRUCTIONS
+lpaymentBankName,PAYMENT BANK NAME
+lpaymentBankBIC,PAYMENT BANK SWIFT/BIC
+lpaymentBankAccountNo,PAYMENT BANK ACCOUNT NO
+lnegotiatingbank,NEGOTIATING BANK
+lpaytrade,DEDUCT FROM PROCEEDS AMOUNT
+lpaytradeother,DEDUCT FROM PROCEEDS OVERRIDE:
+lcourier-name1,COURIER NAME:
+lcourier-accountno1,COURIER ACCOUNT NO:
+lfrombilling,Calculated amt from 
+frombilling,frombilling
+lmiscdates,Custom Fields (update label in the Client Profile):
+lmiscdate1,lmiscdate1
+lmiscdate2,lmiscdate2
+lmiscdate3,lmiscdate3
+lmiscdate4,lmiscdate4
+ldateforward,DATE TO ISSUING BANK
+lcustomrefs,Next 4 fields are Custom Fields (update label in the Client Profile):
+lflowcootoinvoice,FLOW COUNTRY OF ORIGIN TO INVOICE
+lcoocountryoforigintext,CERTIFICATION STATEMENT
+paymentinstructionsnote,Bank Wire Instructions
+header-customername1,,  Draw: 
+header-customername2,,  Draw: 
+lcbConfigurationFile,CHECK TO REFRESH LABELS FROM CLIENT PROFILE
+llird,LAST INSTRUCTION RECEIVED DATE
+llsd,LAST SHIPMENT DATE
+lexpirydate,LC EXPIRATION DATE
+lestlatestpresentation,EST LATEST PRESENTATION DATE
+lFACmilestone,FAC MILESTONE NTE DATE
+lfacnoofdays,FAC NO OF DAYS
+lntedays,NTE DAYS
+lcertreq,CERTIFICATE REQUIRED
+lexpecteddrawdate,EXPECTED DRAW DATE
+lextraday,ADD EXTRA DAY
+lFACpercentofinvoice,FINAL ACCEPTANCE PERCENTAGE
+l48days,NUMBER OF DAYS
+lincoterm,INCOTERM:
+courier-name1,:
+courier-accountno1,cp.courier-accountno1
+lpd,lpd
+lTradebridgeUciSelectionnote,Unique Client Identifier
+lTradebridgeUci,Default UCI No.
+TradebridgeUciDefault,cfg.data.config.tradebridge.uci.default
+TradebridgeUciDefaultpartnerChannel,cfg.data.config.tradebridge.uci.default.partnerChannel
+lTradebridgeUciAlternate,Alternate UCI No.:
+lTradebridgeUciSelection,UCI No.
+lTradebridgeUciIdentifier,Identifier
+lclearucialternate,Clear Alternate UCI No.
+TradebridgeUci-,cfg.data.config.tradebridge.uci.
+TradebridgeUciIdentifier-,cp.locationtpscifd
+TradebridgeUcipartnerChannel-,TradebridgeUcipartnerChannel-
+TradebridgepartnerChannelName-,comboBankpartnerChannel-
+ldocprep,Follow Up Name
+ltasklist,Task List
+ltododate,Date Completed
+lwaitingnote,Comments
+todono-1,1
+todono-2,2
+todono-3,3
+todono-4,4
+todono-5,5
+todono-6,6
+todono-7,7
+todono-8,8
+todono-9,9
+todono-10,10
+todono-11,11
+todono-12,12
+todono-13,13
+todono-14,14
+todono-15,15
+todono-16,16
+todono-17,17
+todono-18,18
+todono-19,19
+todono-20,20
+todono-21,21
+todono-22,22
+todo1-1,PAYMENT INSTRUMENT RECEIVED
+todo1-2,ATTACH THIRD PARTY DOCUMENTS
+todo1-3,SELECTED DRAW DOCUMENTS/DATA INPUT FORMS
+todo1-4,SHIPMENT DETAILS RECEIVED
+todo1-5,SHIPPER'S DOCUMENTS RECEIVED
+todo1-6,SUBMIT PRESENTATION
+todo1-7,FOLLOW UP EXAMINATION DETAILS
+todo1-8,FOLLOW UP COURIER DETAILS
+todo1-9,PAYMENT NOTIFICATION/FOLLOW UP
+todo1-10,CREATE PLACEHOLDER DRAW
+todo1-11,BILLING AND CLOSE
+todo1-12,PENDING ORIGINALS
+todo1-13,PENDING PRINT
+lexpshipdate,cp.lexpshipdate
+lcargoreceiveddate,cp.lcargoreceiveddate
+lsidate,cp.lsidate
+lproofcopyrecvd,cp.lproofcopyrecvd
+lreleasedtransportdocdate,cp.lreleasedtransportdocdate
+ltransportdocdate,cp.ltransportdocdate
+lthirdpartydocreceiveddate,cp.lthirdpartydocreceiveddate
+dated,dated
+paymentBankName-1,cp.wire-bank-name1
+paymentBankName-2,cp.wire-bank-name2
+paymentBankName-3,cp.wire-bank-name3
+paymentBankName-4,cp.wire-bank-name4
+paymentBankBIC-1,cp.wire-bank-swift1
+paymentBankBIC-2,cp.wire-bank-swift2
+paymentBankBIC-3,cp.wire-bank-swift3
+paymentBankBIC-4,cp.wire-bank-swift4
+paymentBankAccountNo-1,cp.enc_wire-bank-accountno1
+paymentBankAccountNo-2,cp.enc_wire-bank-accountno2
+paymentBankAccountNo-3,cp.enc_wire-bank-accountno3
+paymentBankAccountNo-4,cp.enc_wire-bank-accountno4
+lnegobank,NEGOTIATING BANK
+negotaddress-,negotaddress-
+lcollectingbank,ISSUING BANK/COLLECTING BANK
+collectingbankaddress-,collectingbankaddress-
+lapplicantdrawee,APPLICANT / DRAWEE
+applicantaddress-,applicantaddress-
+lbeneficiarydrawer,BENEFICIARY / DRAWER
+beneficiaryaddress-,beneficiaryaddress-
+lpresenter,PRESENTER CONTACT DETAILS
+lname,NAME:
+laddress-1,ADDRESS 1:
+laddress-2,ADDRESS 2:
+laddress-3,ADDRESS 3:
+lcountry,COUNTRY:
+lcollectingbankBIC,BIC NO:
+lbeneficiarycontact,IN CASE OF QUERIES, PLEASE CONTACT:
+lAgree,We agree to be bound by the Terms and Conditions set out in the overleaf of this Application
+lspecialinstructions,SPECIAL INSTRUCTIONS
+ldraftno,DRAFT NUMBER
+lbankreference,ADVISING BANK REF
+lcombotenordescription,TENOR DESCRIPTION
+lmixedtenordetails,MIXED TENOR DETAILS
+lothertenordescription,OTHER TENOR EVENT TYPE
+lmaturitydate,MATURITY DATE
+lmaturitydatedraft,MATURITY DATE ON DRAFT
+lcombodocsagainst,DOCUMENT AGAINST
+lcombofinance,FINANCE
+lcomboavalization,AVALIZATION
+ltenorDays,NUMBER OF DAYS
+lcomboourChargesOn,ALL YOUR CHARGES ARE FOR THE ACCOUNT OF
+lcombooverseasBankChargesOn,COLLECTING BANK CHARGES FOR THE ACCOUNT OF
+lcomboacceptanceMayBedeferredUntilArrivalOfVessel,ACCEPTANCE/PAYMENT DEFERRED UNTIL ARRIVAL OF VESSEL
+lcombocableAdviceForNon,CABLE ADVICE FOR NON
+lcombocableAdviceFor,CABLE ADVICE FOR
+lcomboProtestFor,PROTEST FOR
+lcomboProtestForNon,PROTEST FOR NON
+lcombowaiveinterest,WAIVE INTEREST
+lcomboourChargesWaive,COLLECTING BANK CHARGES WAIVE
+lFeeOurAccount,FEES AND CHARGES ARE FOR OUR ACCOUNT IF THE SAME ARE NOT PAID BY THE DRAWEE
+lForwardDocuments,FORWARD DOCUMENTS TO YOUR BRANCH OR CORRESPONDENT UNLESS OTHERWISE INSTRUCTED
+lCollectInterest,COLLECT INTEREST AT                 %  FROM THE DATE OF                            TO
+lRestSettlementInstructions,Click to clear Payment Instructions
+lSettlementInstructions1,CREDIT NET PROCEEDS TO OUR ACCOUNT NO.
+lSettlementInstructions2,AND DEDUCT
+lSettlementInstructions3,IN SETTLEMENT OF YOUR IMPORT BILL NO.
+lSettlementInstructions4,CREDIT NET PROCEEDS TO OUR ACCOUNT NO.
+lSettlementInstructions5,ARRANGE WIRE TRANSFER OF NET PROCEEDS TO
+lSettlementInstructions6,REMIT PROCEEDS TO OUR ACCOUNT NO.
+lb2bcreditnumber,BACK TO BACK CREDIT NO
+lDeductCharges,DEDUCT ALL YOUR CHARGES FROM THE L/C PROCEEDS
+istampendorsed,istampendorsed
+iraisedcommercestamp,iraisedcommercestamp
+iraisednotarystamp,iraisednotarystamp
+transmitfax,transmitfax
+isstampsigned,isstampsigned
+ismanuallyendorsed,ismanuallyendorsed
+headerbankcover-1,BANK COVER DETAILS
+headerbankcover-2,COLLECTION INSTRUCTIONS
+headerbankcover-3,PAYMENT INSTRUCTIONS
+headerbankcover-4,DOCUMENTARY CREDIT (L/C)
+headerbankcover-5,COLLECTION (D/P OR D/A)
+lcbexamineDocuments,NEGOTIATE THE DOCUMENTS UNDER THE L/C
+lcbnegpurchaseprepay,FOR NEGOTIATION/PURCHASE/PREPAYMENT/ADVANCE AS UNDER THE L/C
+lcbnegpurchaseprepayafteracceptance,AFTER ACCEPTANCE BY THE ISSUING BANK
+lcbnegpurchaseprepaycomplypresentation,DOCUMENTS PRESENTED CONSTITUTE COMPLYING PRESENTATION
+lcbsendDocumentsnofinancing,PLEASE SEND THE DOCUMENTS FOR PAYMENT / ACCEPTANCE WITHOUT FINANCING
+lcbsendDocumentsnofinancingwithChecking,WITH
+lcbsendDocumentsnofinancingNoChecking,WITHOUT YOUR CHECKING OF DOCUMENTS
+lcbsendonApproval,SEND DOCUMENTS ON APPROVAL
+lcombodraftspresented,DRAFTS PRESENTED
+lcombotranslation,TRANSLATION, IF ANY PROVIDED
+lcbfinanceUnder,FINANCING UNDER
+lcbfinanceUnderDP,D/P
+lcbfinanceUnderDA,D/A
+lcbpaymentUnder,PAYMENT UNDER
+lcbpaymentUnderDP,D/P
+lcbpaymentUnderDA,D/A
+header-customername3,,  Draw: 

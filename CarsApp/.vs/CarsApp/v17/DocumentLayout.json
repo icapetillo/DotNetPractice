@@ -1,0 +1,173 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Repos\\DotNetPractice\\CarsApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE85E3B-DC56-4221-BBE6-E7931B50B90D}|CarsApp\\Cars.csproj|c:\\repos\\dotnetpractice\\carsapp\\carsapp\\data\\repositories\\carrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE85E3B-DC56-4221-BBE6-E7931B50B90D}|CarsApp\\Cars.csproj|solutionrelative:carsapp\\data\\repositories\\carrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE85E3B-DC56-4221-BBE6-E7931B50B90D}|CarsApp\\CarsApp.csproj|c:\\repos\\dotnetpractice\\carsapp\\carsapp\\data\\databaseconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE85E3B-DC56-4221-BBE6-E7931B50B90D}|CarsApp\\CarsApp.csproj|solutionrelative:carsapp\\data\\databaseconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE85E3B-DC56-4221-BBE6-E7931B50B90D}|CarsApp\\CarsApp.csproj|c:\\repos\\dotnetpractice\\carsapp\\carsapp\\data\\dbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE85E3B-DC56-4221-BBE6-E7931B50B90D}|CarsApp\\CarsApp.csproj|solutionrelative:carsapp\\data\\dbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE85E3B-DC56-4221-BBE6-E7931B50B90D}|CarsApp\\CarsApp.csproj|c:\\repos\\dotnetpractice\\carsapp\\carsapp\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EBE85E3B-DC56-4221-BBE6-E7931B50B90D}|CarsApp\\CarsApp.csproj|solutionrelative:carsapp\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE85E3B-DC56-4221-BBE6-E7931B50B90D}|CarsApp\\CarsApp.csproj|c:\\repos\\dotnetpractice\\carsapp\\carsapp\\data\\profiles\\carprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE85E3B-DC56-4221-BBE6-E7931B50B90D}|CarsApp\\CarsApp.csproj|solutionrelative:carsapp\\data\\profiles\\carprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE85E3B-DC56-4221-BBE6-E7931B50B90D}|CarsApp\\CarsApp.csproj|c:\\repos\\dotnetpractice\\carsapp\\carsapp\\data\\interfaces\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE85E3B-DC56-4221-BBE6-E7931B50B90D}|CarsApp\\CarsApp.csproj|solutionrelative:carsapp\\data\\interfaces\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE85E3B-DC56-4221-BBE6-E7931B50B90D}|CarsApp\\CarsApp.csproj|c:\\repos\\dotnetpractice\\carsapp\\carsapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBE85E3B-DC56-4221-BBE6-E7931B50B90D}|CarsApp\\CarsApp.csproj|solutionrelative:carsapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE85E3B-DC56-4221-BBE6-E7931B50B90D}|CarsApp\\CarsApp.csproj|c:\\repos\\dotnetpractice\\carsapp\\carsapp\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EBE85E3B-DC56-4221-BBE6-E7931B50B90D}|CarsApp\\CarsApp.csproj|solutionrelative:carsapp\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBE85E3B-DC56-4221-BBE6-E7931B50B90D}|CarsApp\\CarsApp.csproj|c:\\repos\\dotnetpractice\\carsapp\\carsapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EBE85E3B-DC56-4221-BBE6-E7931B50B90D}|CarsApp\\CarsApp.csproj|solutionrelative:carsapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CarRepository.cs",
+              "DocumentMoniker": "C:\\Repos\\DotNetPractice\\CarsApp\\CarsApp\\Data\\Repositories\\CarRepository.cs",
+              "RelativeDocumentMoniker": "CarsApp\\Data\\Repositories\\CarRepository.cs",
+              "ToolTip": "C:\\Repos\\DotNetPractice\\CarsApp\\CarsApp\\Data\\Repositories\\CarRepository.cs",
+              "RelativeToolTip": "CarsApp\\Data\\Repositories\\CarRepository.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAApwDQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T17:25:57.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Extensions.cs",
+              "DocumentMoniker": "C:\\Repos\\DotNetPractice\\CarsApp\\CarsApp\\Data\\Interfaces\\Extensions.cs",
+              "RelativeDocumentMoniker": "CarsApp\\Data\\Interfaces\\Extensions.cs",
+              "ToolTip": "C:\\Repos\\DotNetPractice\\CarsApp\\CarsApp\\Data\\Interfaces\\Extensions.cs",
+              "RelativeToolTip": "CarsApp\\Data\\Interfaces\\Extensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T17:25:01.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CarProfile.cs",
+              "DocumentMoniker": "C:\\Repos\\DotNetPractice\\CarsApp\\CarsApp\\Data\\Profiles\\CarProfile.cs",
+              "RelativeDocumentMoniker": "CarsApp\\Data\\Profiles\\CarProfile.cs",
+              "ToolTip": "C:\\Repos\\DotNetPractice\\CarsApp\\CarsApp\\Data\\Profiles\\CarProfile.cs",
+              "RelativeToolTip": "CarsApp\\Data\\Profiles\\CarProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T17:24:17.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Repos\\DotNetPractice\\CarsApp\\CarsApp\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "CarsApp\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Repos\\DotNetPractice\\CarsApp\\CarsApp\\Properties\\launchSettings.json",
+              "RelativeToolTip": "CarsApp\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-30T17:21:34.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Repos\\DotNetPractice\\CarsApp\\CarsApp\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "CarsApp\\appsettings.Development.json",
+              "ToolTip": "C:\\Repos\\DotNetPractice\\CarsApp\\CarsApp\\appsettings.Development.json",
+              "RelativeToolTip": "CarsApp\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-30T17:10:31.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DbSettings.cs",
+              "DocumentMoniker": "C:\\Repos\\DotNetPractice\\CarsApp\\CarsApp\\Data\\DbSettings.cs",
+              "RelativeDocumentMoniker": "CarsApp\\Data\\DbSettings.cs",
+              "ToolTip": "C:\\Repos\\DotNetPractice\\CarsApp\\CarsApp\\Data\\DbSettings.cs",
+              "RelativeToolTip": "CarsApp\\Data\\DbSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T16:44:04.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DatabaseConnectionFactory.cs",
+              "DocumentMoniker": "C:\\Repos\\DotNetPractice\\CarsApp\\CarsApp\\Data\\DatabaseConnectionFactory.cs",
+              "RelativeDocumentMoniker": "CarsApp\\Data\\DatabaseConnectionFactory.cs",
+              "ToolTip": "C:\\Repos\\DotNetPractice\\CarsApp\\CarsApp\\Data\\DatabaseConnectionFactory.cs",
+              "RelativeToolTip": "CarsApp\\Data\\DatabaseConnectionFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T16:43:51.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Repos\\DotNetPractice\\CarsApp\\CarsApp\\appsettings.json",
+              "RelativeDocumentMoniker": "CarsApp\\appsettings.json",
+              "ToolTip": "C:\\Repos\\DotNetPractice\\CarsApp\\CarsApp\\appsettings.json",
+              "RelativeToolTip": "CarsApp\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-30T16:42:03.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Repos\\DotNetPractice\\CarsApp\\CarsApp\\Program.cs",
+              "RelativeDocumentMoniker": "CarsApp\\Program.cs",
+              "ToolTip": "C:\\Repos\\DotNetPractice\\CarsApp\\CarsApp\\Program.cs",
+              "RelativeToolTip": "CarsApp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T16:27:04.215Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

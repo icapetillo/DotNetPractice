@@ -1,0 +1,8 @@
+C:\Repos\DotNetPractice\CarsApp\CarsApp\obj\Debug\net8.0\CarsApp.csproj.AssemblyReference.cache
+C:\Repos\DotNetPractice\CarsApp\CarsApp\obj\Debug\net8.0\CarsApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\DotNetPractice\CarsApp\CarsApp\obj\Debug\net8.0\CarsApp.AssemblyInfoInputs.cache
+C:\Repos\DotNetPractice\CarsApp\CarsApp\obj\Debug\net8.0\CarsApp.AssemblyInfo.cs
+C:\Repos\DotNetPractice\CarsApp\CarsApp\obj\Debug\net8.0\CarsApp.csproj.CoreCompileInputs.cache
+C:\Repos\DotNetPractice\CarsApp\CarsApp\obj\Debug\net8.0\CarsApp.MvcApplicationPartsAssemblyInfo.cs
+C:\Repos\DotNetPractice\CarsApp\CarsApp\obj\Debug\net8.0\CarsApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Repos\DotNetPractice\CarsApp\CarsApp\obj\Debug\net8.0\CarsApp.sourcelink.json

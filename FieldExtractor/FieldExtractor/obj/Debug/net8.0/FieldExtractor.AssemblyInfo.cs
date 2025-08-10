@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FieldExtractor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df16e0a8a5a4dc48d504ac860dd8a6d6b69720fb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fe0c0a210b4d61033d5aca309e3278639a90f07")]
 [assembly: System.Reflection.AssemblyProductAttribute("FieldExtractor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FieldExtractor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

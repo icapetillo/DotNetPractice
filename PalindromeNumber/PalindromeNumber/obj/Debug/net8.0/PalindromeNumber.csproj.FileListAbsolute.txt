@@ -1,0 +1,15 @@
+C:\Repos\DotNetPractice\PalindromeNumber\PalindromeNumber\bin\Debug\net8.0\PalindromeNumber.exe
+C:\Repos\DotNetPractice\PalindromeNumber\PalindromeNumber\bin\Debug\net8.0\PalindromeNumber.deps.json
+C:\Repos\DotNetPractice\PalindromeNumber\PalindromeNumber\bin\Debug\net8.0\PalindromeNumber.runtimeconfig.json
+C:\Repos\DotNetPractice\PalindromeNumber\PalindromeNumber\bin\Debug\net8.0\PalindromeNumber.dll
+C:\Repos\DotNetPractice\PalindromeNumber\PalindromeNumber\bin\Debug\net8.0\PalindromeNumber.pdb
+C:\Repos\DotNetPractice\PalindromeNumber\PalindromeNumber\obj\Debug\net8.0\PalindromeNumber.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\DotNetPractice\PalindromeNumber\PalindromeNumber\obj\Debug\net8.0\PalindromeNumber.AssemblyInfoInputs.cache
+C:\Repos\DotNetPractice\PalindromeNumber\PalindromeNumber\obj\Debug\net8.0\PalindromeNumber.AssemblyInfo.cs
+C:\Repos\DotNetPractice\PalindromeNumber\PalindromeNumber\obj\Debug\net8.0\PalindromeNumber.csproj.CoreCompileInputs.cache
+C:\Repos\DotNetPractice\PalindromeNumber\PalindromeNumber\obj\Debug\net8.0\PalindromeNumber.sourcelink.json
+C:\Repos\DotNetPractice\PalindromeNumber\PalindromeNumber\obj\Debug\net8.0\PalindromeNumber.dll
+C:\Repos\DotNetPractice\PalindromeNumber\PalindromeNumber\obj\Debug\net8.0\refint\PalindromeNumber.dll
+C:\Repos\DotNetPractice\PalindromeNumber\PalindromeNumber\obj\Debug\net8.0\PalindromeNumber.pdb
+C:\Repos\DotNetPractice\PalindromeNumber\PalindromeNumber\obj\Debug\net8.0\PalindromeNumber.genruntimeconfig.cache
+C:\Repos\DotNetPractice\PalindromeNumber\PalindromeNumber\obj\Debug\net8.0\ref\PalindromeNumber.dll

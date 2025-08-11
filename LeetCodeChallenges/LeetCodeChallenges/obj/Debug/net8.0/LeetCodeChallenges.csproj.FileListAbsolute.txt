@@ -1,0 +1,15 @@
+C:\Repos\DotNetPractice\LeetCodeChallenges\LeetCodeChallenges\bin\Debug\net8.0\LeetCodeChallenges.exe
+C:\Repos\DotNetPractice\LeetCodeChallenges\LeetCodeChallenges\bin\Debug\net8.0\LeetCodeChallenges.deps.json
+C:\Repos\DotNetPractice\LeetCodeChallenges\LeetCodeChallenges\bin\Debug\net8.0\LeetCodeChallenges.runtimeconfig.json
+C:\Repos\DotNetPractice\LeetCodeChallenges\LeetCodeChallenges\bin\Debug\net8.0\LeetCodeChallenges.dll
+C:\Repos\DotNetPractice\LeetCodeChallenges\LeetCodeChallenges\bin\Debug\net8.0\LeetCodeChallenges.pdb
+C:\Repos\DotNetPractice\LeetCodeChallenges\LeetCodeChallenges\obj\Debug\net8.0\LeetCodeChallenges.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\DotNetPractice\LeetCodeChallenges\LeetCodeChallenges\obj\Debug\net8.0\LeetCodeChallenges.AssemblyInfoInputs.cache
+C:\Repos\DotNetPractice\LeetCodeChallenges\LeetCodeChallenges\obj\Debug\net8.0\LeetCodeChallenges.AssemblyInfo.cs
+C:\Repos\DotNetPractice\LeetCodeChallenges\LeetCodeChallenges\obj\Debug\net8.0\LeetCodeChallenges.csproj.CoreCompileInputs.cache
+C:\Repos\DotNetPractice\LeetCodeChallenges\LeetCodeChallenges\obj\Debug\net8.0\LeetCodeChallenges.sourcelink.json
+C:\Repos\DotNetPractice\LeetCodeChallenges\LeetCodeChallenges\obj\Debug\net8.0\LeetCodeChallenges.dll
+C:\Repos\DotNetPractice\LeetCodeChallenges\LeetCodeChallenges\obj\Debug\net8.0\refint\LeetCodeChallenges.dll
+C:\Repos\DotNetPractice\LeetCodeChallenges\LeetCodeChallenges\obj\Debug\net8.0\LeetCodeChallenges.pdb
+C:\Repos\DotNetPractice\LeetCodeChallenges\LeetCodeChallenges\obj\Debug\net8.0\LeetCodeChallenges.genruntimeconfig.cache
+C:\Repos\DotNetPractice\LeetCodeChallenges\LeetCodeChallenges\obj\Debug\net8.0\ref\LeetCodeChallenges.dll

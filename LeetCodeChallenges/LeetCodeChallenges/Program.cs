@@ -48,8 +48,12 @@
             bool isHappy = happyNumber.isHappyNumber(happyNum);
             Console.WriteLine("The number {0} is a happy number: {1}", happyNum, isHappy); // Should return true
 
-
-
+            //Test NeedleHaystack
+            NeedleHaystack needleHaystack = new NeedleHaystack();
+            string haystack = "butsadbut";
+            string needle = "rrr";
+            int index = needleHaystack.StrStr(haystack, needle);
+            Console.WriteLine("The index of the needle '{0}' in the haystack '{1}' is: {2}", needle, haystack, index); // Should return 2
 
 
         }

@@ -36,6 +36,22 @@
             string prefix = longestCommonPrefix.LongestCommonPrefix1(strs);
             Console.WriteLine("Longest common prefix of {0} is: {1}", string.Join(", ", strs), prefix); // Should return "fl"
 
+            //Test Valid Parentheses
+            ValidParentheses validParentheses = new ValidParentheses();
+            string parentheses = "({[]})";
+            bool isValid = validParentheses.IsValid(parentheses);
+            Console.WriteLine("The parentheses string '{0}' is valid: {1}", parentheses, isValid); // Should return true
+
+            //Test Happy Number
+            HappyNumber happyNumber = new HappyNumber();
+            int happyNum = 2;
+            bool isHappy = happyNumber.isHappyNumber(happyNum);
+            Console.WriteLine("The number {0} is a happy number: {1}", happyNum, isHappy); // Should return true
+
+
+
+
+
         }
     }
 }

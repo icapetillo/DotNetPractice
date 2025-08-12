@@ -63,6 +63,18 @@
             Console.WriteLine("The target {0} should be inserted at index: {1}", targetSearchInsert, insertIndex); // Should return 2
             insertIndex = searchInsert.SearchInsertBinary(numsSearchInsert, targetSearchInsert);
             Console.WriteLine("The target {0} should be inserted at index (binary search): {1}", targetSearchInsert, insertIndex); // Should return 2
+
+            //Test LengthOfLastWord
+            LengthOfLastWord lengthOfLastWord = new LengthOfLastWord();
+            string sentence = "   fly me   to   the moon  ";
+            int lastWordLength = lengthOfLastWord.GetLengthOfLastWord(sentence);
+            Console.WriteLine("The length of the last word in the sentence '{0}' is: {1}", sentence, lastWordLength); // Should return 4
+
+            //Test PlusOne
+            PlusOne plusOne = new PlusOne();
+            int[] digits = { 9 };
+            int[] incrementedDigits = plusOne.GetPlusOne(digits);
+            Console.WriteLine("The result of adding one to the digits [{0}] is: [{1}]", string.Join(", ", digits), string.Join(", ", incrementedDigits)); // Should return [1,0,0,0]
         }
     }
 }

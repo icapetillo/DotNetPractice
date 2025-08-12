@@ -55,7 +55,14 @@
             int index = needleHaystack.StrStr(haystack, needle);
             Console.WriteLine("The index of the needle '{0}' in the haystack '{1}' is: {2}", needle, haystack, index); // Should return 2
 
-
+            //Test SearchInsert
+            SearchInsert searchInsert = new SearchInsert();
+            int[] numsSearchInsert = { 1, 3, 5, 6 };
+            int targetSearchInsert = 7;
+            int insertIndex = searchInsert.SearchInsertPosition(numsSearchInsert, targetSearchInsert);
+            Console.WriteLine("The target {0} should be inserted at index: {1}", targetSearchInsert, insertIndex); // Should return 2
+            insertIndex = searchInsert.SearchInsertBinary(numsSearchInsert, targetSearchInsert);
+            Console.WriteLine("The target {0} should be inserted at index (binary search): {1}", targetSearchInsert, insertIndex); // Should return 2
         }
     }
 }

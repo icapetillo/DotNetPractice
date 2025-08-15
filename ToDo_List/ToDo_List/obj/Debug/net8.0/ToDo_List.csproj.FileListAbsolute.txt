@@ -1,0 +1,15 @@
+C:\Repos\DotNetPractice\ToDo_List\ToDo_List\bin\Debug\net8.0\ToDo_List.exe
+C:\Repos\DotNetPractice\ToDo_List\ToDo_List\bin\Debug\net8.0\ToDo_List.deps.json
+C:\Repos\DotNetPractice\ToDo_List\ToDo_List\bin\Debug\net8.0\ToDo_List.runtimeconfig.json
+C:\Repos\DotNetPractice\ToDo_List\ToDo_List\bin\Debug\net8.0\ToDo_List.dll
+C:\Repos\DotNetPractice\ToDo_List\ToDo_List\bin\Debug\net8.0\ToDo_List.pdb
+C:\Repos\DotNetPractice\ToDo_List\ToDo_List\obj\Debug\net8.0\ToDo_List.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\DotNetPractice\ToDo_List\ToDo_List\obj\Debug\net8.0\ToDo_List.AssemblyInfoInputs.cache
+C:\Repos\DotNetPractice\ToDo_List\ToDo_List\obj\Debug\net8.0\ToDo_List.AssemblyInfo.cs
+C:\Repos\DotNetPractice\ToDo_List\ToDo_List\obj\Debug\net8.0\ToDo_List.csproj.CoreCompileInputs.cache
+C:\Repos\DotNetPractice\ToDo_List\ToDo_List\obj\Debug\net8.0\ToDo_List.sourcelink.json
+C:\Repos\DotNetPractice\ToDo_List\ToDo_List\obj\Debug\net8.0\ToDo_List.dll
+C:\Repos\DotNetPractice\ToDo_List\ToDo_List\obj\Debug\net8.0\refint\ToDo_List.dll
+C:\Repos\DotNetPractice\ToDo_List\ToDo_List\obj\Debug\net8.0\ToDo_List.pdb
+C:\Repos\DotNetPractice\ToDo_List\ToDo_List\obj\Debug\net8.0\ToDo_List.genruntimeconfig.cache
+C:\Repos\DotNetPractice\ToDo_List\ToDo_List\obj\Debug\net8.0\ref\ToDo_List.dll

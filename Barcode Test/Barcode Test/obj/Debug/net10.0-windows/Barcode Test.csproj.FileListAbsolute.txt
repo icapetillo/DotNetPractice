@@ -1,0 +1,73 @@
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Barcode Test.exe
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Barcode Test.deps.json
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Barcode Test.runtimeconfig.json
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Barcode Test.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Barcode Test.pdb
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\obj\Debug\net10.0-windows\Barcode_Test.Form1.resources
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\obj\Debug\net10.0-windows\Barcode Test.csproj.GenerateResource.cache
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\obj\Debug\net10.0-windows\Barcode Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\obj\Debug\net10.0-windows\Barcode Test.AssemblyInfoInputs.cache
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\obj\Debug\net10.0-windows\Barcode Test.AssemblyInfo.cs
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\obj\Debug\net10.0-windows\Barcode Test.csproj.CoreCompileInputs.cache
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\obj\Debug\net10.0-windows\Barcode Test.sourcelink.json
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\obj\Debug\net10.0-windows\Barcode Test.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\obj\Debug\net10.0-windows\refint\Barcode Test.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\obj\Debug\net10.0-windows\Barcode Test.pdb
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\obj\Debug\net10.0-windows\Barcode Test.genruntimeconfig.cache
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\obj\Debug\net10.0-windows\ref\Barcode Test.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\IronBarcodeDetection.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\IronBarCode.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\BitMiracle.LibTiff.NET.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Google.Protobuf.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Grpc.Core.Api.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Grpc.Net.Client.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Grpc.Net.Common.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\IronSoftware.Abstractions.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\IronSoftware.Logger.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\IronSoftware.Shared.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\IronSoftware.Drawing.Abstractions.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\IronSoftware.Drawing.Common.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Microsoft.Extensions.Configuration.Binder.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Microsoft.Extensions.Configuration.Json.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Microsoft.ML.OnnxRuntime.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Polly.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\Polly.Core.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\SixLabors.Fonts.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\SixLabors.ImageSharp.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\SixLabors.ImageSharp.Drawing.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\win-x64\native\IronBarcodeInterop.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\win-x86\native\IronBarcodeInterop.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\win-x64\native\ReaderInternals.deployment.json
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\win-x64\native\ReaderInterop.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\win-x86\native\ReaderInternals.deployment.json
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\win-x86\native\ReaderInterop.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\android\native\onnxruntime.aar
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\ios\native\onnxruntime.xcframework.zip
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\linux-arm64\native\libonnxruntime.so
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\linux-arm64\native\libonnxruntime_providers_shared.so
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\linux-x64\native\libonnxruntime.so
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\linux-x64\native\libonnxruntime_providers_shared.so
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\osx-arm64\native\libonnxruntime.dylib
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\osx-x64\native\libonnxruntime.dylib
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\win-arm64\native\onnxruntime.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\win-arm64\native\onnxruntime.lib
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\win-arm64\native\onnxruntime_providers_shared.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\win-arm64\native\onnxruntime_providers_shared.lib
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\win-x64\native\onnxruntime.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\win-x64\native\onnxruntime.lib
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\win-x64\native\onnxruntime_providers_shared.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\win-x64\native\onnxruntime_providers_shared.lib
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\win-x86\native\onnxruntime.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\win-x86\native\onnxruntime.lib
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\win-x86\native\onnxruntime_providers_shared.dll
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\bin\Debug\net10.0-windows\runtimes\win-x86\native\onnxruntime_providers_shared.lib
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\obj\Debug\net10.0-windows\Barcode Test.csproj.AssemblyReference.cache
+C:\Repos\DotNetPractice\Barcode Test\Barcode Test\obj\Debug\net10.0-windows\Barcode .BAFF36B0.Up2Date

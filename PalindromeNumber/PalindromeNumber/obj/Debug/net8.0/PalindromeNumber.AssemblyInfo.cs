@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PalindromeNumber")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+70f3ef1f22de06ed0b3a839f7c46dbd54fddaa20")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a98f61fe3c12a2d07d948780d2076361ade0bbc3")]
 [assembly: System.Reflection.AssemblyProductAttribute("PalindromeNumber")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PalindromeNumber")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

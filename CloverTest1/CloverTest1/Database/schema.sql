@@ -1,0 +1,47 @@
+-- Tenants table
+CREATE TABLE Tenants (
+    Id UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
+    Name NVARCHAR(200) NOT NULL,
+    ConnectionString NVARCHAR(MAX) NULL,
+    BrandDisplayName NVARCHAR(200) NULL,
+    ApiKey NVARCHAR(400) NULL
+);
+
+-- Products table
+CREATE TABLE Products (
+    Id UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
+    TenantId UNIQUEIDENTIFIER NOT NULL,
+    Name NVARCHAR(200) NOT NULL,
+    Description NVARCHAR(MAX) NULL,
+    Price DECIMAL(18,2) NOT NULL,
+    Category NVARCHAR(200) NULL,
+    CONSTRAINT FK_Products_Tenants FOREIGN KEY (TenantId) REFERENCES Tenants(Id)
+);
+
+-- ProductModifers table
+CREATE TABLE ProductModifiers (
+    Id UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
+    ProductId UNIQUEIDENTIFIER NOT NULL,
+    Name NVARCHAR(200) NOT NULL,
+    PriceDelta DECIMAL(18,2) NOT NULL,
+    CONSTRAINT FK_Modifiers_Products FOREIGN KEY (ProductId) REFERENCES Products(Id)
+);
+
+-- Orders table
+CREATE TABLE Orders (
+    Id UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
+    TenantId UNIQUEIDENTIFIER NOT NULL,
+    CreatedAt DATETIME2 NOT NULL,
+    CONSTRAINT FK_Orders_Tenants FOREIGN KEY (TenantId) REFERENCES Tenants(Id)
+);
+
+-- OrderLines table
+CREATE TABLE OrderLines (
+    Id UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
+    OrderId UNIQUEIDENTIFIER NOT NULL,
+    ProductId UNIQUEIDENTIFIER NOT NULL,
+    Quantity INT NOT NULL,
+    UnitPrice DECIMAL(18,2) NOT NULL,
+    CONSTRAINT FK_OrderLines_Orders FOREIGN KEY (OrderId) REFERENCES Orders(Id),
+    CONSTRAINT FK_OrderLines_Products FOREIGN KEY (ProductId) REFERENCES Products(Id)
+);
